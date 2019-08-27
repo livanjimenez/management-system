@@ -8,3 +8,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => console.log(`Listening on ${port}`));
+
+// docker installed, remember to set up SQL Server connection later and test it.
