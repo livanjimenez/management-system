@@ -1,16 +1,11 @@
 import React from 'react';
 import Dashboard from './components/dashboard';
-import Button from '@material-ui/core/Button';
 import './App.css';
 
 
 function App() {
   return (
-    // Testing @material-ui framework for UI Design
     <div className="App">
-      <Button variant="contained" color="primary">
-          Hello World!
-        </Button>
       <Dashboard/>
     </div>
   );
