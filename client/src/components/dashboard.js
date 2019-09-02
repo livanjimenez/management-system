@@ -15,7 +15,8 @@ const useStyles = makeStyles({
     flexGrow: '1',
   },
   loginButton: {
-    float: 'right'
+    marginLeft: 'auto',
+    marginRight: '20',
   },
 });
 
@@ -27,7 +28,9 @@ const Dashboard = () => {
       <AppBar position="static">
         <Toolbar>
           <Header />
-          <Button color="inherit" className={classes.loginButton}>Login</Button>
+          <Button color="inherit" size="large" variant="outlined" className={classes.loginButton}>
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

@@ -8,6 +8,7 @@ const useStyles = makeStyles({
   },
   title: {
     flexGrow: '1',
+    float: 'left',
   },
 });
 
