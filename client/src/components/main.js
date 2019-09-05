@@ -12,12 +12,14 @@ import {
 } from 'mui-layout';
 
 const theme = createMuiTheme();
+const { createStandardLayout } = presets;
+const config = createStandardLayout();
 
 const Main = () => {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Root>
+        <Root config={config}>
           <Header
             renderMenuIcon={open => (open ? <ChevronLeft /> : <MenuRounded />)}
           />
@@ -42,6 +44,7 @@ const Main = () => {
                 sed lectus vestibulum mattis ullamcorper velit sed. Id aliquet
                 lectus proin nibh nisl condimentum.
             </Typography>
+            <Content />
           </Box>
           <Footer>Footer</Footer>
         </Root>
