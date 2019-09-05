@@ -1,12 +1,12 @@
 import React from 'react';
-import Dashboard from './components/dashboard';
+import Main from './components/main';
 import './App.css';
 
 
 function App() {
   return (
     <div>
-      <Dashboard />
+      <Main />
 
     </div>
   );
