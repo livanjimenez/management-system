@@ -7,18 +7,23 @@ import {
   Toolbar,
 } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const drawerWidth = 240;
+const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex'
+    display: 'flex',
   },
-  title: {
-    flexGrow: '1',
+  drawer: {
+    [theme.breakpoints.up('sm')]: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
   },
   loginButton: {
     marginLeft: 'auto',
     marginRight: '20',
   },
-});
+  toolbar: theme.mixins.toolbar,
+}));
 
 const Dashboard = () => {
   const classes = useStyles();
@@ -32,6 +37,9 @@ const Dashboard = () => {
             Login
           </Button>
         </Toolbar>
+        <nav className={classes.drawer}>
+
+        </nav>
       </AppBar>
     </div>
   );
