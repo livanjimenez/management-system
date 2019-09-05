@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme, Box, Typography } from "@material-ui/core";
+import { createMuiTheme, Typography, CssBaseline } from "@material-ui/core";
 import { ChevronLeft, MenuRounded, ChevronRight } from "@material-ui/icons";
 import {
   Root,
@@ -20,38 +20,36 @@ const Main = () => {
     <div>
       <ThemeProvider theme={theme}>
         <Root config={config}>
+          <CssBaseline />
           <Header
             renderMenuIcon={open => (open ? <ChevronLeft /> : <MenuRounded />)}
-          />
+          >
+            <h2>AmePower - Management System</h2>
+          </Header>
           <Nav
             renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}
           >
-            Nav
+            Nav is here!
           </Nav>
-          <Box p={{ xs: 2, sm: 3 }}>
-            <Typography>
-              <b>This is content!</b>
-            </Typography>
-            <Typography variant="h6" gutterBottom>
+          <Content>
+            <Typography variant="h6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam
-                aliquam sem et tortor consequat id porta. Adipiscing commodo elit
-                at imperdiet. Lacus sed turpis tincidunt id aliquet risus feugiat
-                in ante. Cras tincidunt lobortis feugiat vivamus at augue eget
-                arcu. Hendrerit dolor magna eget est. Fames ac turpis egestas
-                maecenas. Cras semper auctor neque vitae tempus quam pellentesque.
-                Amet nisl purus in mollis nunc sed id semper. Molestie ac feugiat
-                sed lectus vestibulum mattis ullamcorper velit sed. Id aliquet
-                lectus proin nibh nisl condimentum.
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam
+              aliquam sem et tortor consequat id porta. Adipiscing commodo elit
+              at imperdiet. Lacus sed turpis tincidunt id aliquet risus feugiat
+              in ante. Cras tincidunt lobortis feugiat vivamus at augue eget
+              arcu. Hendrerit dolor magna eget est. Fames ac turpis egestas
+              maecenas. Cras semper auctor neque vitae tempus quam pellentesque.
+              Amet nisl purus in mollis nunc sed id semper. Molestie ac feugiat
+              sed lectus vestibulum mattis ullamcorper velit sed. Id aliquet
+              lectus proin nibh nisl condimentum.
             </Typography>
-            <Content />
-          </Box>
+          </Content>
           <Footer>Footer</Footer>
         </Root>
       </ThemeProvider>
     </div>
   );
-
 };
 
 export default Main;
