@@ -56,7 +56,7 @@ const Main = () => {
               lectus proin nibh nisl condimentum.
             </Typography>
           </Content>
-          <Footer>Footer</Footer>
+          <Footer>Copyright &copy; AmePower 2019</Footer>
         </Root>
       </ThemeProvider>
     </div>
