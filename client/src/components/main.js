@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from '@material-ui/styles';
+import { ThemeProvider, makeStyles } from '@material-ui/styles';
 import { createMuiTheme, Typography, CssBaseline } from "@material-ui/core";
 import { ChevronLeft, MenuRounded, ChevronRight } from "@material-ui/icons";
 import {
@@ -14,8 +14,18 @@ import {
 const theme = createMuiTheme();
 const { createStandardLayout } = presets;
 const config = createStandardLayout();
+const useHeaderStyles = makeStyles({
+  header: {
+    backgroundColor: '#C3073F',
+    color: 'white',
+  },
+});
 
 const Main = () => {
+  const {
+    header: headerCss,
+  } = useHeaderStyles();
+
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -23,6 +33,7 @@ const Main = () => {
           <CssBaseline />
           <Header
             renderMenuIcon={open => (open ? <ChevronLeft /> : <MenuRounded />)}
+            classes={{ root: headerCss }}
           >
             <h2>AmePower - Management System</h2>
           </Header>
