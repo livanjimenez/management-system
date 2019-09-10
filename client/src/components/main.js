@@ -1,10 +1,10 @@
 import React from 'react';
-import { ThemeProvider, makeStyles } from '@material-ui/styles';
+import { ThemeProvider, } from '@material-ui/styles';
 import { createMuiTheme, Typography, CssBaseline } from "@material-ui/core";
 import { ChevronLeft, MenuRounded, ChevronRight } from "@material-ui/icons";
+import AmeHeader from './AmeHeader';
 import {
   Root,
-  Header,
   Nav,
   Content,
   Footer,
@@ -14,29 +14,15 @@ import {
 const theme = createMuiTheme();
 const { createStandardLayout } = presets;
 const config = createStandardLayout();
-const useHeaderStyles = makeStyles({
-  header: {
-    backgroundColor: '#C3073F',
-    color: 'white',
-  },
-});
+
 
 const Main = () => {
-  const {
-    header: headerCss,
-  } = useHeaderStyles();
-
   return (
     <div>
       <ThemeProvider theme={theme}>
         <Root config={config}>
           <CssBaseline />
-          <Header
-            renderMenuIcon={open => (open ? <ChevronLeft /> : <MenuRounded />)}
-            classes={{ root: headerCss }}
-          >
-            <h2>AmePower - Management System</h2>
-          </Header>
+          <AmeHeader />
           <Nav
             renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}
           >
