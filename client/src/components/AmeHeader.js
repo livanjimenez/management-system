@@ -1,7 +1,7 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/styles';
-import {Button} from '@material-ui/core';
-import { ChevronLeft, MenuRounded, ChevronRight } from "@material-ui/icons";
+import { makeStyles } from '@material-ui/styles';
+import { Button } from '@material-ui/core';
+import { ChevronLeft, MenuRounded, } from "@material-ui/icons";
 import {
   Header,
 } from 'mui-layout';
@@ -26,8 +26,8 @@ const AmeHeader = () => {
         className={classes.header}
       >
         <h2>AmePower - Management System</h2>
-      
-      <Button color="inherit">Login</Button>
+
+        <Button color="inherit">Login</Button>
       </Header>
     </div>
   );
