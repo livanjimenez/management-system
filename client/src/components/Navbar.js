@@ -9,9 +9,7 @@ import {
   ListItemIcon,
   Icon,
 } from '@material-ui/core';
-import {
-  Nav,
-} from 'mui-layout';
+import { Nav } from 'mui-layout';
 
 // Fix icons not showing
 const navbarIcons = [
