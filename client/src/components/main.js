@@ -1,11 +1,10 @@
 import React from 'react';
 import { ThemeProvider, } from '@material-ui/styles';
 import { createMuiTheme, Typography, CssBaseline } from "@material-ui/core";
-import { ChevronLeft, MenuRounded, ChevronRight } from "@material-ui/icons";
 import AmeHeader from './AmeHeader';
+import Navbar from './Navbar';
 import {
   Root,
-  Nav,
   Content,
   Footer,
   presets,
@@ -21,13 +20,13 @@ const Main = () => {
     <div>
       <ThemeProvider theme={theme}>
         <Root config={config}>
+          
           <CssBaseline />
+          
           <AmeHeader />
-          <Nav
-            renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}
-          >
-            Nav is here!
-          </Nav>
+
+          <Navbar />
+
           <Content>
             <Typography variant="h6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

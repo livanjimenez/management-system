@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Button } from '@material-ui/core';
-import { ChevronLeft, MenuRounded, } from "@material-ui/icons";
 import {
   Header,
 } from 'mui-layout';
@@ -12,7 +11,8 @@ const useHeaderStyles = makeStyles({
     color: 'white',
   },
   loginButton: {
-    float: 'right', // Fix Login button
+    marginLeft: 'auto',
+    marginRight: '8',
   },
 });
 
@@ -21,16 +21,26 @@ const AmeHeader = () => {
 
   return (
     <div>
-      <Header
-        renderMenuIcon={open => (open ? <ChevronLeft /> : <MenuRounded />)}
-        className={classes.header}
-      >
+      <Header className={classes.header}>
         <h2>AmePower - Management System</h2>
-
-        <Button color="inherit">Login</Button>
+        <Button 
+          color="inherit" 
+          size="large" 
+          variant="outlined" 
+          className={classes.loginButton}
+        >
+          Login
+        </Button>
       </Header>
     </div>
   );
 };
 
 export default AmeHeader;
+
+/*
+- [x] AmeHeader.js
+- [x] Fix Login button bug
+- modularization of components
+- copy&paste navbar
+*/
