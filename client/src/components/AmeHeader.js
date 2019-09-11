@@ -37,10 +37,3 @@ const AmeHeader = () => {
 };
 
 export default AmeHeader;
-
-/*
-- [x] AmeHeader.js
-- [x] Fix Login button bug
-- modularization of components
-- copy&paste navbar
-*/
