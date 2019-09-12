@@ -38,5 +38,5 @@ const AmeHeader = () => {
 
 export default AmeHeader;
  
-//Reinier es un come pinga
+
 
