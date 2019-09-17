@@ -2,7 +2,6 @@ import React from 'react';
 import { ChevronLeft, ChevronRight } from "@material-ui/icons";
 import {
   Divider,
-  Typography,
   List,
   ListItem,
   ListItemText,
@@ -10,12 +9,12 @@ import {
   Icon,
 } from '@material-ui/core';
 import { Nav } from 'mui-layout';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 
-// Fix icons not showing
-const navbarIcons = [
+const list = [
   {
-    primaryText: 'My Files',
-    icon: 'folder'
+    primaryText: "My Files",
+    icon: "folder"
   },
   {
     primaryText: "Shared with me",
@@ -50,36 +49,34 @@ const navbarIcons = [
 const Navbar = () => {
   return (
     <div>
-      <Nav
-        renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}
-      >
-        <Typography variant="h6" style={{ paddingBottom: 16 }} noWrap>
-          Username
-        </Typography>
+      <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
+        <h3>General Title</h3>
         <Divider />
-        {navbarIcons.map(({ primaryText, icon }, i) => (
-          <List>
-            <ListItem key={primaryText} selected={i === 0} button>
-              <ListItemIcon>
-                <Icon>{icon}</Icon>
-              </ListItemIcon>
-              <ListItemText
-                primary={primaryText}
-                primaryTypographyProps={{ noWrap: true }}
-              />
-            </ListItem>
-          </List>
-        ))}
-        <Divider style={{ margin: "12px 0" }} />
-        <ListItem button>
-          <ListItemIcon>
-            <Icon>settings</Icon>
-          </ListItemIcon>
-          <ListItemText
-            primary={"Account"}
-            primaryTypographyProps={{ noWrap: true }}
-          />
-        </ListItem>
+        <List>
+    {list.map(({ primaryText, icon }, i) => (
+      <ListItem key={primaryText} selected={i === 0} button>
+        <ListItemIcon>
+          <Icon>{icon}</Icon>
+        </ListItemIcon>
+        <ListItemText
+          primary={primaryText}
+          primaryTypographyProps={{ noWrap: true }}
+        />
+      </ListItem>
+    ))}
+    <Divider style={{ margin: "12px 0" }} />
+    <ListItem button>
+      <ListItemIcon>
+        <Icon>
+          <FitnessCenterIcon />
+        </Icon>
+      </ListItemIcon>
+      <ListItemText
+        primary={"Settings & account"}
+        primaryTypographyProps={{ noWrap: true }}
+      />
+    </ListItem>
+  </List>
       </Nav>
     </div>
   );
