@@ -1,6 +1,7 @@
 import React from 'react';
 import { Content } from 'mui-layout';
 import { Typography } from '@material-ui/core';
+import Form from './Form';
 
 const AmeContent = () => {
   return (
@@ -18,6 +19,8 @@ const AmeContent = () => {
           sed lectus vestibulum mattis ullamcorper velit sed. Id aliquet
           lectus proin nibh nisl condimentum.
           </Typography>
+
+          <Form />
       </Content>
     </div>
   );

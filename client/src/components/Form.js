@@ -1,40 +1,37 @@
-import React, { Component } from 'react';
-import {TextField} from 'material-ui';
-import RenderToLayer from 'material-ui/internal/RenderToLayer';
+import React from 'react';
+import { TextField } from '@material-ui/core';
+// import RenderToLayer from 'material-ui/internal/RenderToLayer';
 
+// state = {
+//   open: false,
+//   form: {
+//     vehicle: '',
+//     modules: ''
+//   }
+// }
 
-export default class enxtends Component{
-    state = {
-        open: false,
-        form: {
-            vehicle: '',
-            modules: ''
-        }
-    }
-}
+// handleChange = name => ({ target: { value } }) => {
+//   this.setState({
+//     this.form{
+//     ...this.state.form,
+//     [name]: value
+//   }
+// })
+// }
 
+const Form = () => {
+  // const { open, form: { vehicle, modules } } = this.state;
 
-handleChange = name => ({target: {value}}) => {
-    this.setState({
-        this.form{
-            ...this.state.form,
-        [name] : value
-        }
-    })
-}
-
-
-Render() {
-    const {open , form: {vehicle , modules}} = this.state
-
-return(
+  return (
     <form>
-<TextField
+      <TextField
         label="vehicle"
-        value={vehicle}
-        onChange={handleChange('vehicle')}
+        // value={vehicle}
+        // onChange={handleChange('vehicle')}
         margin="normal"
       />
-</form>
-)
-}
+    </form>
+  );
+};
+
+export default Form;
