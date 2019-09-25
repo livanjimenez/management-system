@@ -13,7 +13,7 @@ import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 
 const list = [
   {
-    primaryText: "My Files",
+    primaryText: "Active Projects",
     icon: "folder"
   },
   {
