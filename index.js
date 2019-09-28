@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
 const port = process.env.PORT || 8000;
@@ -8,5 +9,3 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => console.log(`Listening on ${port}`));
-
-// docker installed, remember to set up SQL Server connection later and test it.
