@@ -2,6 +2,8 @@ import React from 'react';
 import { Content } from 'mui-layout';
 import { Typography } from '@material-ui/core';
 import Form from './Form';
+import color from '@material-ui/core/colors/blueGrey';
+import { width } from '@material-ui/system';
 
 const AmeContent = () => {
   return (
@@ -20,7 +22,14 @@ const AmeContent = () => {
           lectus proin nibh nisl condimentum.
           </Typography>
 
-          <Form />
+    <div 
+    style ={{backgroundColor: 'red' , width: '20%'}}> 
+    <Form />
+    <button style = {{color: 'white' , backgroundColor: 'black'}}>
+        <h4>Submit</h4>
+    </button>
+    </div>
+          
       </Content>
     </div>
   );

@@ -1,5 +1,7 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
+import { CenterFocusStrong } from '@material-ui/icons';
+
 // import RenderToLayer from 'material-ui/internal/RenderToLayer';
 
 // state = {
@@ -19,18 +21,28 @@ import { TextField } from '@material-ui/core';
 // })
 // }
 
+
 const Form = () => {
   // const { open, form: { vehicle, modules } } = this.state;
 
   return (
-    <form>
+      <container style ={{backgroundColor: 'red'}}>
+          <form >
       <TextField
-        label="vehicle"
-        // value={vehicle}
-        // onChange={handleChange('vehicle')}
+        label="Vehicles"
+        // value={Vehicles}
+        // onChange={handleChange('Vehicles')}
+        margin="normal"
+      />
+      <br/>
+      <TextField
+        label="Modules"
+        // value={Modules}
+        // onChange={handleChange('Modules')}
         margin="normal"
       />
     </form>
+      </container>
   );
 };
 
