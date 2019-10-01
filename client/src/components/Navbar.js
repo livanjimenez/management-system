@@ -9,35 +9,50 @@ import {
   Icon,
 } from '@material-ui/core';
 import { Nav } from 'mui-layout';
-import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import SettingsApplicationsIcon from '@material-ui/icons/SettingsApplicationsOutlined';
+import HomeIcon from '@material-ui/icons/Home';
+import FolderIcon from '@material-ui/icons/FolderOutlined';
 
 const Navbar = () => {
   return (
     <div>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
-        <h3>General Title</h3>
+        <h3>Username</h3>
         <Divider />
         <List>
           <ListItem button>
             <ListItemIcon>
               <Icon>
-                <FitnessCenterIcon />
+                <HomeIcon />
               </Icon>
             </ListItemIcon>
             <ListItemText
-              primary={"Settings & account"}
+              primary={"Home"}
               primaryTypographyProps={{ noWrap: true }}
             />
           </ListItem>
-          <Divider style={{ margin: "12px 0" }} />
+
           <ListItem button>
             <ListItemIcon>
               <Icon>
-                <FitnessCenterIcon />
+                <FolderIcon />
               </Icon>
             </ListItemIcon>
             <ListItemText
-              primary={"Settings & account"}
+              primary={"Active Projects"}
+              primaryTypographyProps={{ noWrap: true }}
+            />
+          </ListItem>
+
+          <Divider style={{ margin: "12px 0" }} />
+          <ListItem button>
+            <ListItemIcon>
+              <Icon >
+                <SettingsApplicationsIcon />
+              </Icon>
+            </ListItemIcon>
+            <ListItemText
+              primary={"Settings"}
               primaryTypographyProps={{ noWrap: true }}
             />
           </ListItem>

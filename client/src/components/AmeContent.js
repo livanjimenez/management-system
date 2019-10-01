@@ -23,9 +23,9 @@ const AmeContent = () => {
           </Typography>
 
     <div 
-    style ={{backgroundColor: 'red' , width: '20%'}}> 
+    style ={{backgroundColor: '#C3073F' , width: '20%' }}> 
     <Form />
-    <button style = {{color: 'white' , backgroundColor: 'black'}}>
+    <button style = {{color: 'white' , backgroundColor: 'black' }}>
         <h4>Submit</h4>
     </button>
     </div>
