@@ -26,7 +26,7 @@ const Form = () => {
   // const { open, form: { vehicle, modules } } = this.state;
 
   return (
-      <container style ={{backgroundColor: 'red'}}>
+      <container >
           <form >
       <TextField
         label="Vehicles"
