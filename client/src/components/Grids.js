@@ -37,7 +37,7 @@ export default function SpacingGrid() {
             style={{
                 backgroundColor: '#C3073F',
                 width: '40%',
-                height: 'auto'
+                height: 'auto',
             }}>
                 <h2 style={{textAlign: 'center', color: 'white'}}>Vehicle 1</h2>
                 <Grid container className={classes.root} spacing={2}>
@@ -74,6 +74,7 @@ export default function SpacingGrid() {
                     <Grid item xs={12}></Grid>
                 </Grid>
             </Container>
+            <div style={{padding: '5%'}}/>
         </div>        
     );
 }
