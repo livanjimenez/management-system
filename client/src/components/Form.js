@@ -22,25 +22,6 @@ const Form = () => {
   const classes = useStyles();
 
   return (
-<<<<<<< HEAD
-      <container >
-          <form >
-      <TextField
-        label="Vehicles"
-        // value={Vehicles}
-        // onChange={handleChange('Vehicles')}
-        margin="normal"
-      />
-      <br/>
-      <TextField
-        label="Modules"
-        // value={Modules}
-        // onChange={handleChange('Modules')}
-        margin="normal"
-      />
-    </form>
-      </container>
-=======
     <div>
       <Container maxWidth="sm" fixed>
         <h2 className={classes.title}>Enter your project's information</h2>
@@ -68,7 +49,6 @@ const Form = () => {
       </Container>
       <div />
     </div>
->>>>>>> 15024033c1b81730ac7e16844ac4aed64881c67e
   );
 };
 
