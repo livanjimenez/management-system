@@ -7,7 +7,8 @@ const AmeContent = () => {
   return (
     <div>
       <Content>
-       
+       <Form/>
+       <Grids/>
       </Content>
     </div>
   );
