@@ -31,7 +31,12 @@ export default function SpacingGrid() {
 
     return (
         <div>
-            <Container fixed>
+            <Container fixed 
+            style={{
+                backgroundColor: '#6F2232',
+                width: '40%',
+                height: 'auto'
+            }}>
                 <Grid container className={classes.root} spacing={2}>
                     <Grid item xs={12}>
                         <Grid container justify="center" spacing={spacing}>
@@ -46,7 +51,12 @@ export default function SpacingGrid() {
                 </Grid>
             </Container>
 
-            <Container fixed>
+            <Container fixed 
+            style={{
+                backgroundColor: '#6F2232',
+                width: '40%',
+                height: 'auto'
+            }}>
                 <Grid container className={classes.root} spacing={2}>
                     <Grid item xs={12}>
                         <Grid container justify="center" spacing={spacing}>
@@ -60,6 +70,6 @@ export default function SpacingGrid() {
                     <Grid item xs={12}></Grid>
                 </Grid>
             </Container>
-        </div>
+        </div>        
     );
 }
