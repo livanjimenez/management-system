@@ -5,7 +5,7 @@ import {
   Header,
 } from 'mui-layout';
 import AmeLogo from "./AmeLogo.jpg";
-
+import SearchBar from "react-search-field";
 
 const useHeaderStyles = makeStyles({
   header: {
@@ -15,8 +15,8 @@ const useHeaderStyles = makeStyles({
   loginButton: {
     marginLeft: 'auto',
     marginRight: '8',
-  },
-});
+  }})
+
 
 const AmeHeader = () => {
   const classes = useHeaderStyles();
@@ -25,7 +25,18 @@ const AmeHeader = () => {
     <div>
       <Header className={classes.header}>
         <img src = {AmeLogo} alt = 'Logo' style = {{width: '200px', height: '50px'}}/>
-        <h2>        AmePower - Management System</h2>
+
+
+      <SearchBar
+      onChange={() => console.log('onChange')}
+      onRequestSearch={() => console.log('onRequestSearch')}
+      style={{
+        padding: '10%',
+        margin: '0 auto',
+        maxWidth: 800,
+      }}
+    />
+
         <Button 
           color="inherit" 
           size="large" 
@@ -34,6 +45,8 @@ const AmeHeader = () => {
         >
           Login
         </Button>
+
+        
       </Header>
     </div>
   );
