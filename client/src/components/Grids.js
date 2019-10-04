@@ -7,8 +7,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
-import { textAlign } from '@material-ui/system';
-import { CenterFocusStrong, CenterFocusStrongOutlined } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -33,12 +31,7 @@ export default function SpacingGrid() {
 
     return (
         <div>
-            <Container fixed 
-            style={{
-                backgroundColor: '#C3073F',
-                width: '40%',
-                height: 'auto',
-            }}>
+            
                 <h2 style={{textAlign: 'center', color: 'white'}}>Vehicle 1</h2>
                 <Grid container className={classes.root} spacing={2}>
                     <Grid item xs={12}>
@@ -52,15 +45,9 @@ export default function SpacingGrid() {
                     </Grid>
                     <Grid item xs={12}></Grid>
                 </Grid>
-            </Container>
+            
 
-            <Container fixed 
-            style={{
-                backgroundColor: '#C3073F',
-                width: '40%',
-                height: 'auto'
-            }}>
-                <h2 style={{textAlign: 'Center', color: 'white'}}>Vehicle 2</h2>
+            
                 <Grid container className={classes.root} spacing={2}>
                     <Grid item xs={12}>
                         <Grid container justify="center" spacing={spacing}>
@@ -73,7 +60,7 @@ export default function SpacingGrid() {
                     </Grid>
                     <Grid item xs={12}></Grid>
                 </Grid>
-            </Container>
+            
             <div style={{padding: '5%'}}/>
         </div>        
     );
