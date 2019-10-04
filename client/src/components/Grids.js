@@ -25,33 +25,12 @@ export default function SpacingGrid() {
     const [spacing, setSpacing] = React.useState(2);
     const classes = useStyles();
 
-    const handleChange = event => {
-        setSpacing(Number(event.target.value));
-    };
-
     return (
         <div>
-            
-                <h2 style={{textAlign: 'center', color: 'white'}}>Vehicle 1</h2>
                 <Grid container className={classes.root} spacing={2}>
                     <Grid item xs={12}>
                         <Grid container justify="center" spacing={spacing}>
-                            {[0, 1, 2].map(value => (
-                                <Grid key={value} item>
-                                    <Paper className={classes.paper} />
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={12}></Grid>
-                </Grid>
-            
-
-            
-                <Grid container className={classes.root} spacing={2}>
-                    <Grid item xs={12}>
-                        <Grid container justify="center" spacing={spacing}>
-                            {[0, 1, 2].map(value => (
+                            {[0].map(value => (
                                 <Grid key={value} item>
                                     <Paper className={classes.paper} />
                                 </Grid>
