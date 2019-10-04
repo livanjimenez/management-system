@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight } from "@material-ui/icons";
+import { ChevronLeft, ChevronRight, PlaylistAddCheck, LocalShipping, Build, Home, FolderOutlined, Assessment, Folder, FolderOpen, Settings } from "@material-ui/icons";
 import {
   Divider,
   List,
@@ -9,21 +9,19 @@ import {
   Icon,
 } from '@material-ui/core';
 import { Nav } from 'mui-layout';
-import SettingsApplicationsIcon from '@material-ui/icons/SettingsApplicationsOutlined';
-import HomeIcon from '@material-ui/icons/Home';
-import FolderIcon from '@material-ui/icons/FolderOutlined';
+
 
 const Navbar = () => {
   return (
     <div>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
-        <h3>Username</h3>
+       <h3>Username</h3>
         <Divider />
         <List>
           <ListItem button>
             <ListItemIcon>
               <Icon>
-                <HomeIcon />
+                <Home />
               </Icon>
             </ListItemIcon>
             <ListItemText
@@ -35,7 +33,7 @@ const Navbar = () => {
           <ListItem button>
             <ListItemIcon>
               <Icon>
-                <FolderIcon />
+                <FolderOpen />
               </Icon>
             </ListItemIcon>
             <ListItemText
@@ -44,11 +42,59 @@ const Navbar = () => {
             />
           </ListItem>
 
+          <ListItem button>
+            <ListItemIcon>
+              <Icon>
+                <Build />
+              </Icon>
+            </ListItemIcon>
+            <ListItemText
+              primary={"Production"}
+              primaryTypographyProps={{ noWrap: true }}
+            />
+          </ListItem>
+
+          <ListItem button>
+            <ListItemIcon>
+              <Icon>
+                <PlaylistAddCheck />
+              </Icon>
+            </ListItemIcon>
+            <ListItemText
+              primary={"Testing"}
+              primaryTypographyProps={{ noWrap: true }}
+            />
+          </ListItem>
+
+          <ListItem button>
+            <ListItemIcon>
+              <Icon>
+                <LocalShipping />
+              </Icon>
+            </ListItemIcon>
+            <ListItemText
+              primary={"Shipping and Receiving"}
+              primaryTypographyProps={{ noWrap: true }}
+            />
+          </ListItem>
+
+          <ListItem button>
+            <ListItemIcon>
+              <Icon>
+                <Assessment />
+              </Icon>
+            </ListItemIcon>
+            <ListItemText
+              primary={"Analytics"}
+              primaryTypographyProps={{ noWrap: true }}
+            />
+          </ListItem>
+
           <Divider style={{ margin: "12px 0" }} />
           <ListItem button>
             <ListItemIcon>
               <Icon >
-                <SettingsApplicationsIcon />
+                <Settings />
               </Icon>
             </ListItemIcon>
             <ListItemText

@@ -4,6 +4,8 @@ import { Button } from '@material-ui/core';
 import {
   Header,
 } from 'mui-layout';
+import AmeLogo from "./AmeLogo.jpg";
+
 
 const useHeaderStyles = makeStyles({
   header: {
@@ -22,7 +24,8 @@ const AmeHeader = () => {
   return (
     <div>
       <Header className={classes.header}>
-        <h2>AmePower - Management System</h2>
+        <img src = {AmeLogo} alt = 'Logo' style = {{width: '200px', height: '50px'}}/>
+        <h2>        AmePower - Management System</h2>
         <Button 
           color="inherit" 
           size="large" 
