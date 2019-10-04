@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function OutlinedTextFields() {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
+  const [values, setValues] = useState({
     name: '',
   });
 
@@ -40,7 +40,7 @@ export default function OutlinedTextFields() {
         variant="outlined"
       />
 
-        <TextField
+      <TextField
         required
         id="Location"
         label="Location"
@@ -50,7 +50,7 @@ export default function OutlinedTextFields() {
         variant="outlined"
       />
 
-<TextField
+      <TextField
         required
         id="Date"
         label="Date"
@@ -59,10 +59,7 @@ export default function OutlinedTextFields() {
         margin="normal"
         variant="outlined"
       />
-      
-      
-      
-        
+
     </form>
   );
 }

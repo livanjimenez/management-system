@@ -15,8 +15,6 @@ const Navbar = () => {
   return (
     <div>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
-       <h3>Username</h3>
-        <Divider />
         <List>
           <ListItem button>
             <ListItemIcon>
