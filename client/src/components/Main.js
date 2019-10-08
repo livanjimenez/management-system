@@ -30,15 +30,15 @@ const Main = () => {
 
         <Root config={config}>
 
-        <CssBaseline />
+          <CssBaseline />
 
-        <AmeHeader />
+          <AmeHeader />
 
-        <Navbar />
+          <Navbar />
 
-        <AmeContent />
+          <AmeContent />
 
-        <Footer className={classes.footer}>Copyright &copy; AmePower 2019</Footer>
+          <Footer className={classes.footer}>Copyright &copy; AmePower 2019</Footer>
 
         </Root>
 

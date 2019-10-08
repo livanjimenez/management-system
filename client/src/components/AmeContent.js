@@ -9,7 +9,7 @@ const AmeContent = () => {
   return (
     <div>
       <Content>
-       <Modules/>    
+        <Modules />
       </Content>
     </div>
   );
