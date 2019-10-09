@@ -1,5 +1,15 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight, PlaylistAddCheck, LocalShipping, Build, Home, FolderOutlined, Assessment, Folder, FolderOpen, Settings } from "@material-ui/icons";
+import {
+  ChevronLeft,
+  ChevronRight,
+  PlaylistAddCheck,
+  LocalShipping,
+  Build,
+  Home,
+  Assessment,
+  FolderOpen,
+  Settings
+} from "@material-ui/icons";
 import {
   Divider,
   List,
