@@ -8,4 +8,5 @@ app.listen(port, () => console.log(`Listening on ${port}`));
 
 // parse JSON (application/json content-type)
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api', routes);

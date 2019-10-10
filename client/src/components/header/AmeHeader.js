@@ -25,7 +25,7 @@ const AmeHeader = () => {
   return (
     <div>
       <Header className={classes.header}>
-        <img src={AmeLogo} alt='Logo' style={{ width: '200px', height: '50px' }} />
+        <img src={AmeLogo} alt='Logo' style={{ width: '225px', height: '60px' }} />
         
         <Button
           color="inherit"
