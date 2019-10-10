@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import {
   Header,
 } from 'mui-layout';
-import AmeLogo from '../images/AmeLogo.jpg';
+import AmeLogo from '../../images/Amepower_PNG.png';
 
 
 const useHeaderStyles = makeStyles({

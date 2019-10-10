@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -15,6 +15,9 @@ const useStyles = makeStyles(theme => ({
   },
   menu: {
     width: 200,
+  },
+  fab: {
+    margin: theme.spacing(2),
   },
 }));
 
@@ -59,7 +62,10 @@ export default function OutlinedTextFields() {
         margin="normal"
         variant="outlined"
       />
-
+      
+      <Fab color="secondary" aria-label="add" className={classes.fab}>
+        <AddIcon />
+      </Fab>
     </form>
   );
 }
