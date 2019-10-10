@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -16,31 +16,38 @@ const useStyles = makeStyles(theme => ({
   menu: {
     width: 200,
   },
-  fab: {
+  button: {
     margin: theme.spacing(2),
   },
 }));
 
 export default function OutlinedTextFields() {
   const classes = useStyles();
-  const [values, setValues] = useState({
-    name: '',
-  });
+  // const [values, setValues] = useState({
+  //   name: '',
+  // });
 
-  const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value });
+  const [data, setData] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Submitting data ${data}`);
   };
 
+  // const handleChange = name => event => {
+  //   setValues({ ...values, [name]: event.target.value });
+  // };
+
   return (
-    <form className={classes.container} noValidate autoComplete="off">
-      <TextField
+    <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSubmit}>
+      {/* <TextField
         required
         id="S/N"
         label="Serial Number"
         className={classes.textField}
-        onChange={handleChange('name')}
         margin="normal"
         variant="outlined"
+        onChange={e => setData(e.target.value)}
       />
 
       <TextField
@@ -63,9 +70,21 @@ export default function OutlinedTextFields() {
         variant="outlined"
       />
       
-      <Fab color="secondary" aria-label="add" className={classes.fab}>
-        <AddIcon />
-      </Fab>
+      <Button color="secondary" aria-label="add" className={classes.button}>
+        <AddIcon 
+          type="submit"
+        />
+      </Button> */}
+
+      <label>
+        Enter Data:
+        <input 
+        type="text"
+        value={data}
+        onChange={e => setData(e.target.value)}
+        />
+      </label>
+      <input type="submit" value="Submit" />
     </form>
   );
 }

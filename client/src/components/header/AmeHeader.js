@@ -35,8 +35,7 @@ const AmeHeader = () => {
         >
           Login
         </Button>
-
-
+        
       </Header>
     </div>
   );
