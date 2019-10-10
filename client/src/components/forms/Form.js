@@ -40,42 +40,7 @@ export default function OutlinedTextFields() {
 
   return (
     <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSubmit}>
-      {/* <TextField
-        required
-        id="S/N"
-        label="Serial Number"
-        className={classes.textField}
-        margin="normal"
-        variant="outlined"
-        onChange={e => setData(e.target.value)}
-      />
-
-      <TextField
-        required
-        id="Location"
-        label="Location"
-        className={classes.textField}
-        onChange={handleChange('name')}
-        margin="normal"
-        variant="outlined"
-      />
-
-      <TextField
-        required
-        id="Date"
-        label="Date"
-        className={classes.textField}
-        onChange={handleChange('name')}
-        margin="normal"
-        variant="outlined"
-      />
       
-      <Button color="secondary" aria-label="add" className={classes.button}>
-        <AddIcon 
-          type="submit"
-        />
-      </Button> */}
-
       <TextField
         id="data"
         label="Data"
