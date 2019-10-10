@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
-import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   menu: {
     width: 200,
   },
-  button: {
+  fab: {
     margin: theme.spacing(2),
   },
 }));
@@ -76,15 +76,18 @@ export default function OutlinedTextFields() {
         />
       </Button> */}
 
-      <label>
-        Enter Data:
-        <input 
-        type="text"
+      <TextField
+        id="data"
+        label="Data"
         value={data}
         onChange={e => setData(e.target.value)}
-        />
-      </label>
-      <input type="submit" value="Submit" />
+        className={classes.textField}
+      />
+
+      <Fab color="secondary" type="submit" className={classes.fab}>
+        <AddIcon />
+      </Fab>
+
     </form>
   );
 }
