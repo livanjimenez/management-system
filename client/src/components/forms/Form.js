@@ -31,7 +31,7 @@ export default function OutlinedTextFields() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Submitting data ${data}`);
+    alert(`Data enter: ${data}`);
   };
 
   // const handleChange = name => event => {
@@ -40,7 +40,7 @@ export default function OutlinedTextFields() {
 
   return (
     <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSubmit}>
-      
+
       <TextField
         id="data"
         label="Data"
