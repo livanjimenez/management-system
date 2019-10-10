@@ -2,8 +2,8 @@ import React from 'react';
 import { ThemeProvider, } from '@material-ui/styles';
 import { createMuiTheme, CssBaseline } from "@material-ui/core";
 import AmeHeader from './header/AmeHeader';
-import AmeContent from './AmeContent';
-import Navbar from './Navbar';
+import AmeContent from './content/AmeContent';
+import Navbar from './sidebar/Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Root,
