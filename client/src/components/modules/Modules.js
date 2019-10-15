@@ -25,11 +25,6 @@ export default function Modules() {
           some text
         </Paper>
       </Grid>
-      <Grid item xs>
-        <Paper className={classes.paper}>
-          some text
-        </Paper>
-      </Grid>
     </div>
   );
 }
