@@ -7,6 +7,7 @@ const AmeContent = () => {
   return (
     <div>
       <Content>
+        <Modules/>
         <Form />
         <Modules />
       </Content>
