@@ -9,6 +9,7 @@ const AmeContent = () => {
       <Content>
         <Modules/>
         <Form />
+        <Modules />
       </Content>
     </div>
   );
