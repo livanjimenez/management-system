@@ -76,7 +76,7 @@ export default function Modules() {
         {<Typography >
           <p>Module ID: {ModuleID}</p>
           <p>Module Location: {ModuleLocation}</p>
-          <p>{Form.data}</p> {/*Trying to display value from form submition... Not working*/}
+          <p>{Form.data}</p> 
         </Typography>}
       </CardContent>
       <CardActions disableSpacing>
