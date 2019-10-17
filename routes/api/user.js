@@ -7,3 +7,4 @@ const validateSignUpInput = require('../../validation/signup');
 const validateLoginInput = require('../../validation/login');
 const User = require('../../models/User');
 
+// TODO: router.post for signup input & login input from user
