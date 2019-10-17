@@ -15,7 +15,7 @@ import TextField from '@material-ui/core/TextField';
 
 
 
-const useStyles = makeStyles(theme => ({ 
+const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
   },
@@ -36,16 +36,16 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function Modules() { 
+export default function Modules() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-  const [ModuleID ,setModuleID] = useState('');
-  const [ModuleLocation , setModuleLocation] = useState('');
+  const [expanded, setExpanded] = useState(false);
+  const [ModuleID, setModuleID] = useState('');
+  const [ModuleLocation, setModuleLocation] = useState('');
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  
+
   return (
     <React.Fragment>
 
@@ -64,41 +64,41 @@ export default function Modules() {
         className={classes.textField}
       />
 
-    <Card className={classes.card}>
-      <CardHeader
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-      />
-      <CardContent>
-        {<Typography >
-          <p>Module ID: {ModuleID}</p>
-          <p>Module Location: {ModuleLocation}</p>
-          <p>{Form.data}</p> {/*Trying to display value from form submition... Not working*/}
-        </Typography>}
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <Card className={classes.card}>
+        <CardHeader
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+        />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Module log to be shown here.
-          </Typography>
+          {<Typography >
+            <p>Module ID: {ModuleID}</p>
+            <p>Module Location: {ModuleLocation}</p>
+            <p>{Form.data}</p> {/*Trying to display value from form submition... Not working*/}
+          </Typography>}
         </CardContent>
-      </Collapse>
-    </Card>
+        <CardActions disableSpacing>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography variant="body2" color="textSecondary" component="p">
+              Module log to be shown here.
+          </Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
 
     </React.Fragment>
   );
