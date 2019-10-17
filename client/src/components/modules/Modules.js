@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -8,9 +8,10 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Form from '../forms/Form';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -30,21 +31,65 @@ const useStyles = makeStyles(theme => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
-  avatar: {
-    backgroundColor: red[500],
-  },
 }));
 
 
 export default function Modules() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [ModuleID, setModuleID] = useState('');
+  const [ModuleLocation, setModuleLocation] = useState('');
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
+    <div>
+      <TextField
+      id="ModuleID"
+      label="Module ID"
+      value={ModuleID}
+      onChange={e => setModuleID(e.target.value)}
+      className={classes.textField}
+    />
+    <TextField
+      id="ModuleLocation"
+      label="Module Location"
+      value={ModuleLocation}
+      onChange={e => setModuleLocation(e.target.value)}
+      className={classes.textField}
+    />
+
+    <Card className={classes.card}/>
+    <CardHeader
+      action={
+        <IconButton aria-label="settings">
+          <MoreVertIcon />
+        </IconButton>
+      }
+    />
+    <CardContent>
+      {<Typography >
+        <p>Module ID: {ModuleID}</p>
+        <p>Module Location: {ModuleLocation}</p>
+        <p>{Form.data}</p>
+      </Typography>}
+    </CardContent>
+    <CardActions disableSpacing>
+      <IconButton
+        className={clsx(classes.expand, {
+          [classes.expandOpen]: expanded,
+        })}
+        onClick={handleExpandClick}
+        aria-expanded={expanded}
+        aria-label="show more"
+      >
+        <ExpandMoreIcon />
+      </IconButton>
+    </CardActions>
+    <Collapse in={expanded} timeout="auto" unmountOnExit />
+
     <Card className={classes.card}>
       <CardHeader
         action={
@@ -53,11 +98,13 @@ export default function Modules() {
           </IconButton>
         }
       />
+
       <CardContent>
-        <Typography >
-          Information to be shown:
-          Module's ID number and location.
-        </Typography>
+        {<Typography >
+          <p>Module ID: {ModuleID}</p>
+          <p>Module Location: {ModuleLocation}</p>
+          <p>{Form.data}</p> {/*Trying to display value from form submition... Not working*/}
+        </Typography>}
       </CardContent>
       <CardActions disableSpacing>
         <IconButton
@@ -79,5 +126,6 @@ export default function Modules() {
         </CardContent>
       </Collapse>
     </Card>
+    </div>
   );
 }
