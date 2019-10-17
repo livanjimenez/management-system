@@ -23,10 +23,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function OutlinedTextFields() {
   const classes = useStyles();
-  // const [values, setValues] = useState({
-  //   name: '',
-  // });
-
   const [data, setData] = useState('');
 
   const handleSubmit = (event) => {
@@ -34,24 +30,28 @@ export default function OutlinedTextFields() {
     alert(`Data enter: ${data}`);
   };
 
-  // const handleChange = name => event => {
-  //   setValues({ ...values, [name]: event.target.value });
-  // };
-
   return (
     <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSubmit}>
 
-      <TextField
+      {/* <TextField
         id="data"
         label="Data"
         value={data}
         onChange={e => setData(e.target.value)}
         className={classes.textField}
-      />
+      /> */}
 
-      <Fab color="secondary" type="submit" className={classes.fab}>
+      <TextField 
+        type="text"
+        name="module"
+        label="Name of Module"
+        id="module"
+      />
+      <input type="submit" value="Submit" />
+
+      {/* <Fab color="secondary" type="submit" className={classes.fab}>
         <AddIcon />
-      </Fab>
+      </Fab> */}
 
     </form>
   );
