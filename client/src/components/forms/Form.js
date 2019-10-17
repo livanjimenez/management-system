@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import ModuleInputs from './ModuleInputs';
 import Styles from './styles.css'
-
-import React, { useState } from 'react';
+import './styles.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
@@ -25,32 +24,31 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function OutlinedTextFields() {
-  const classes = useStyles();
-  const [data, setData] = useState('');
+// export default function OutlinedTextFields() {
+//   const classes = useStyles();
+//   const [data, setData] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //alert(`Data enter: ${data}`);
-  };
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//   };
 
-  return (
-    <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSubmit}>
+//   return (
+//     <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSubmit}>
 
-      <TextField
-        id="data"
-        label="Data"
-        value={data}
-        onChange={e => setData(e.target.value)}
-        className={classes.textField}
-      />
+//       <TextField
+//         id="data"
+//         label="Data"
+//         value={data}
+//         onChange={e => setData(e.target.value)}
+//         className={classes.textField}
+//       />
 
-      <Fab color="secondary" type="submit" className={classes.fab}>
-        <AddIcon />
-      </Fab>
+//       <Fab color="secondary" type="submit" className={classes.fab}>
+//         <AddIcon />
+//       </Fab>
 
-    </form>
-  );
+//     </form>
+//   );
 
 const Form = () => {
     const [projectState, setProjectState] = useState({

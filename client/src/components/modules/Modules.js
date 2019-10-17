@@ -13,8 +13,6 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Form from '../forms/Form';
 import TextField from '@material-ui/core/TextField';
 
-
-
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
@@ -47,23 +45,50 @@ export default function Modules() {
   };
 
   return (
-    <React.Fragment>
-
+    <div>
       <TextField
-        id="ModuleID"
-        label="Module ID"
-        value={ModuleID}
-        onChange={e => setModuleID(e.target.value)}
-        className={classes.textField}
-      />
-      <TextField
-        id="ModuleLocation"
-        label="Module Location"
-        value={ModuleLocation}
-        onChange={e => setModuleLocation(e.target.value)}
-        className={classes.textField}
-      />
+      id="ModuleID"
+      label="Module ID"
+      value={ModuleID}
+      onChange={e => setModuleID(e.target.value)}
+      className={classes.textField}
+    />
+    <TextField
+      id="ModuleLocation"
+      label="Module Location"
+      value={ModuleLocation}
+      onChange={e => setModuleLocation(e.target.value)}
+      className={classes.textField}
+    />
 
+    <Card className={classes.card}/>
+    <CardHeader
+      action={
+        <IconButton aria-label="settings">
+          <MoreVertIcon />
+        </IconButton>
+      }
+    />
+    <CardContent>
+      {<Typography >
+        <p>Module ID: {ModuleID}</p>
+        <p>Module Location: {ModuleLocation}</p>
+        <p>{Form.data}</p>
+      </Typography>}
+    </CardContent>
+    <CardActions disableSpacing>
+      <IconButton
+        className={clsx(classes.expand, {
+          [classes.expandOpen]: expanded,
+        })}
+        onClick={handleExpandClick}
+        aria-expanded={expanded}
+        aria-label="show more"
+      >
+        <ExpandMoreIcon />
+      </IconButton>
+    </CardActions>
+    <Collapse in={expanded} timeout="auto" unmountOnExit />
 
     <Card className={classes.card}>
       <CardHeader
@@ -73,11 +98,12 @@ export default function Modules() {
           </IconButton>
         }
       />
+
       <CardContent>
         {<Typography >
           <p>Module ID: {ModuleID}</p>
           <p>Module Location: {ModuleLocation}</p>
-          <p>{Form.data}</p> 
+          <p>{Form.data}</p> {/*Trying to display value from form submition... Not working*/}
         </Typography>}
       </CardContent>
       <CardActions disableSpacing>
@@ -93,44 +119,13 @@ export default function Modules() {
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-
-      <Card className={classes.card}>
-        <CardHeader
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-        />
-
         <CardContent>
-          {<Typography >
-            <p>Module ID: {ModuleID}</p>
-            <p>Module Location: {ModuleLocation}</p>
-            <p>{Form.data}</p> {/*Trying to display value from form submition... Not working*/}
-          </Typography>}
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Module log to be shown here.
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
           </Typography>
-          </CardContent>
-        </Collapse>
-      </Card>
-
-    </React.Fragment>
+        </CardContent>
+      </Collapse>
+    </Card>
+    </div>
   );
 }
