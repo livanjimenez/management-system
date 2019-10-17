@@ -64,6 +64,36 @@ export default function Modules() {
         className={classes.textField}
       />
 
+
+    <Card className={classes.card}>
+      <CardHeader
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+      />
+      <CardContent>
+        {<Typography >
+          <p>Module ID: {ModuleID}</p>
+          <p>Module Location: {ModuleLocation}</p>
+          <p>{Form.data}</p> 
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+
       <Card className={classes.card}>
         <CardHeader
           action={
@@ -72,6 +102,7 @@ export default function Modules() {
             </IconButton>
           }
         />
+
         <CardContent>
           {<Typography >
             <p>Module ID: {ModuleID}</p>
