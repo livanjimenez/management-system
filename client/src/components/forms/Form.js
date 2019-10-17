@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ModuleInputs from './ModuleInputs';
 import Styles from './styles.css'
 
-{/*import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
@@ -27,20 +27,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function OutlinedTextFields() {
   const classes = useStyles();
-  // const [values, setValues] = useState({
-  //   name: '',
-  // });
-
   const [data, setData] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
     //alert(`Data enter: ${data}`);
   };
-
-  // const handleChange = name => event => {
-  //   setValues({ ...values, [name]: event.target.value });
-  // };
 
   return (
     <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSubmit}>
@@ -59,7 +51,6 @@ export default function OutlinedTextFields() {
 
     </form>
   );
-}*/}
 
 const Form = () => {
     const [projectState, setProjectState] = useState({
@@ -126,3 +117,4 @@ const Form = () => {
 };
 
 export default Form;
+

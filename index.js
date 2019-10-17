@@ -7,6 +7,9 @@ const mongoose = require('mongoose');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// Routes
+app.use('/api/users/', require('./routes/api/user'));
+
 app.post('/user', (req, res) => {
   console.log(req.body);
   res.send(req.body);
