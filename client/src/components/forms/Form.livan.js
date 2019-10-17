@@ -27,7 +27,7 @@ export default function OutlinedTextFields() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Data enter: ${data}`);
+    //alert(`Data enter: ${data}`);
   };
 
   return (
