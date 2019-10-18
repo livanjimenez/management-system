@@ -3,12 +3,18 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
+const passport = require('passport');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// initialize passport
+app.use(passport.initialize());
+require('./middleware/passport')(passport);
+
 // Routes
 app.use('/api/users/', require('./routes/api/user'));
+app.use('/api/posts/', require('./routes/api/posts'));
 
 app.post('/user', (req, res) => {
   console.log(req.body);
