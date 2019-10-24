@@ -14,12 +14,15 @@ import Checkboxes from '../modules/Checkbox';
 import FloatingActionButtons from '../modules/AddButton';
 import TextField from '@material-ui/core/TextField';
 
+
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
+    width: 500,
+    height: 200,
   },
   media: {
-    height: 0,
+    //height: 0,
     paddingTop: '56.25%', // 16:9
   },
   expand: {
@@ -34,17 +37,33 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-//const blankModule = { name: '', location: '' };
-//
-//    const [moduleState, setModuleState] = useState([
-//        { ...blankModule },
-//    ]);
-
-//const addModule = () => {
-//  setModuleState([...moduleState, { ...blankModule }]);
-//};
-
 export default function Modules() {
+  const [projectState, setProjectState] = useState({
+      project: '',
+      description: '',
+  });
+
+  const handleProjectChange = (e) => setProjectState({
+      ...projectState,
+      [e.target.name]: [e.target.value],
+  });
+
+  const blankModule = { name: '', location: '' };
+  const [moduleState, setModuleState] = useState([
+      { ...blankModule },
+  ]);
+
+  const addModule = () => {
+      setModuleState([...moduleState, { ...blankModule }]);
+  };
+
+  const handleModuleChange = (e) => {
+      const updatedModules = [...moduleState];
+      updatedModules[e.target.dataset.idx][e.target.className] = e.target.value;
+      setModuleState(updatedModules);
+  };
+
+
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [ModuleID, setModuleID] = useState('');
@@ -62,23 +81,10 @@ export default function Modules() {
   };
 
   return (
-    <div>
-      <TextField
-      id="ModuleID"
-      label="Module ID"
-      value={ModuleID}
-      onChange={e => setModuleID(e.target.value)}
-      className={classes.textField}
-    />
-    <TextField
-      id="ModuleLocation"
-      label="Module Location"
-      value={ModuleLocation}
-      onChange={e => setModuleLocation(e.target.value)}
-      className={classes.textField}
-    />
+    <React.Fragment>
+      
 
-    <Card className={classes.card}>
+    <Card className={classes.card} id='card'>
       <CardHeader
         action={
           Checkboxes()
@@ -89,9 +95,6 @@ export default function Modules() {
         {<Typography >
           <p>Module ID: {ModuleID}</p>
           <p>Module Location: {ModuleLocation}</p>
-
-          {/*Trying to display value from form submition... Not working*/}
-          <p>{Form.data}</p> 
         
         </Typography>}
       </CardContent>
@@ -115,9 +118,118 @@ export default function Modules() {
         </CardContent>
       </Collapse>
     </Card>
-    
-    {FloatingActionButtons()}
 
-    </div>
+
+    <Card className={classes.card} id='card'>
+      <CardHeader
+        action={
+          Checkboxes()
+        }
+      />
+
+      <CardContent>
+        {<Typography >
+          <p>Module ID: </p>
+          <p>Module Location: </p>
+        
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+
+
+
+    <Card className={classes.card} id='card'>
+      <CardHeader
+        action={
+          Checkboxes()
+        }
+      />
+
+      <CardContent>
+        {<Typography >
+          <p>Module ID: </p>
+          <p>Module Location: </p>
+        
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+
+
+
+    <Card className={classes.card} id='card'>
+      <CardHeader
+        action={
+          Checkboxes()
+        }
+      />
+
+      <CardContent>
+        {<Typography >
+          <p>Module ID: </p>
+          <p>Module Location: </p>
+        
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+
+    
+    </React.Fragment>
   );
 }

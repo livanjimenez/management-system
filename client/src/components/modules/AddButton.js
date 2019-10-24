@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
+import Modules from '../modules/Modules';
 
 const useStyles = makeStyles(theme => ({
   fab: {
@@ -21,9 +21,6 @@ export default function FloatingActionButtons() {
     <div>
       <Fab color="primary" aria-label="add" className={classes.fab} >
         <AddIcon />
-      </Fab>
-      <Fab disabled aria-label="delete" className={classes.fab}>
-        <DeleteIcon />
       </Fab>
     </div>
   );
