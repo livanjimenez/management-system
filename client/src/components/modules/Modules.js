@@ -9,8 +9,9 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Form from '../forms/Form';
+import Checkboxes from '../modules/Checkbox';
+import FloatingActionButtons from '../modules/AddButton';
 import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
@@ -33,12 +34,28 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+//const blankModule = { name: '', location: '' };
+//
+//    const [moduleState, setModuleState] = useState([
+//        { ...blankModule },
+//    ]);
+
+//const addModule = () => {
+//  setModuleState([...moduleState, { ...blankModule }]);
+//};
 
 export default function Modules() {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [ModuleID, setModuleID] = useState('');
   const [ModuleLocation, setModuleLocation] = useState('');
+  const [state, setState] = React.useState({
+    checkedA: true,
+  });
+
+  const handleChange = name => event => {
+    setState({ ...state, [name]: event.target.checked });
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -61,41 +78,10 @@ export default function Modules() {
       className={classes.textField}
     />
 
-    <Card className={classes.card}/>
-    <CardHeader
-      action={
-        <IconButton aria-label="settings">
-          <MoreVertIcon />
-        </IconButton>
-      }
-    />
-    <CardContent>
-      {<Typography >
-        <p>Module ID: {ModuleID}</p>
-        <p>Module Location: {ModuleLocation}</p>
-        <p>{Form.data}</p>
-      </Typography>}
-    </CardContent>
-    <CardActions disableSpacing>
-      <IconButton
-        className={clsx(classes.expand, {
-          [classes.expandOpen]: expanded,
-        })}
-        onClick={handleExpandClick}
-        aria-expanded={expanded}
-        aria-label="show more"
-      >
-        <ExpandMoreIcon />
-      </IconButton>
-    </CardActions>
-    <Collapse in={expanded} timeout="auto" unmountOnExit />
-
     <Card className={classes.card}>
       <CardHeader
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          Checkboxes()
         }
       />
 
@@ -103,7 +89,10 @@ export default function Modules() {
         {<Typography >
           <p>Module ID: {ModuleID}</p>
           <p>Module Location: {ModuleLocation}</p>
-          <p>{Form.data}</p> {/*Trying to display value from form submition... Not working*/}
+
+          {/*Trying to display value from form submition... Not working*/}
+          <p>{Form.data}</p> 
+        
         </Typography>}
       </CardContent>
       <CardActions disableSpacing>
@@ -126,6 +115,9 @@ export default function Modules() {
         </CardContent>
       </Collapse>
     </Card>
+    
+    {FloatingActionButtons()}
+
     </div>
   );
 }
