@@ -110,7 +110,7 @@ const Navbar = () => {
               </Icon>
             </ListItemIcon>
             <ListItemText
-              primary={"Send To:"}
+              primary={"Send To"}
               primaryTypographyProps={{ noWrap: true }}
             />
           </ListItem>

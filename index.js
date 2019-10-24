@@ -18,11 +18,6 @@ require('./middleware/passport')(passport);
 app.use('/api/users/', require('./routes/api/users'));
 app.use('/api/posts/', require('./routes/api/posts'));
 
-app.post('/user', (req, res) => {
-  console.log(req.body);
-  res.send(req.body);
-});
-
 const MONGO_URI = process.env.MONGO_URI;
 
 mongoose

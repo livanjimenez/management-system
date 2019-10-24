@@ -79,3 +79,5 @@ router.delete(
       .catch(err => res.status(400).json({ delete: 'Error when deleting a post!' }));
   }
 );
+
+module.exports = router;
