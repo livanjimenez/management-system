@@ -9,8 +9,9 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Form from '../forms/Form';
+import Checkboxes from '../modules/Checkbox';
+import FloatingActionButtons from '../modules/AddButton';
 import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
@@ -33,12 +34,28 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+//const blankModule = { name: '', location: '' };
+//
+//    const [moduleState, setModuleState] = useState([
+//        { ...blankModule },
+//    ]);
+
+//const addModule = () => {
+//  setModuleState([...moduleState, { ...blankModule }]);
+//};
 
 export default function Modules() {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [ModuleID, setModuleID] = useState('');
   const [ModuleLocation, setModuleLocation] = useState('');
+  const [state, setState] = React.useState({
+    checkedA: true,
+  });
+
+  const handleChange = name => event => {
+    setState({ ...state, [name]: event.target.checked });
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -64,9 +81,7 @@ export default function Modules() {
     <Card className={classes.card}>
       <CardHeader
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          Checkboxes()
         }
       />
 
@@ -100,6 +115,9 @@ export default function Modules() {
         </CardContent>
       </Collapse>
     </Card>
+    
+    {FloatingActionButtons()}
+
     </div>
   );
 }

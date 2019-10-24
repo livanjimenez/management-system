@@ -8,7 +8,8 @@ import {
   Home,
   Assessment,
   FolderOpen,
-  Settings
+  Settings,
+  Send
 } from "@material-ui/icons";
 import {
   Divider,
@@ -19,6 +20,8 @@ import {
   Icon,
 } from '@material-ui/core';
 import { Nav } from 'mui-layout';
+
+
 
 
 const Navbar = () => {
@@ -99,6 +102,19 @@ const Navbar = () => {
           </ListItem>
 
           <Divider style={{ margin: "12px 0" }} />
+
+          <ListItem button>
+            <ListItemIcon>
+              <Icon>
+                <Send />
+              </Icon>
+            </ListItemIcon>
+            <ListItemText
+              primary={"Send To:"}
+              primaryTypographyProps={{ noWrap: true }}
+            />
+          </ListItem>
+
           <ListItem button>
             <ListItemIcon>
               <Icon >
