@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const post = {
-  module: {
+  serial_number: {
     type: String,
     required: true
   },
-  // TODO: add detailed schemas for amepower's modules
+  creation_date: {
+    type: String,
+    required: true
+  }
 };
 
 const PostSchema = new Schema(post);
