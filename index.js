@@ -5,18 +5,11 @@ const app = express();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const path = require('path');
+const users = require('./routes/api/users');
 
 // middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// initialize passport
-app.use(passport.initialize());
-require('./middleware/passport')(passport);
-
-// Routes
-app.use('/api/users/', require('./routes/api/users'));
-app.use('/api/posts/', require('./routes/api/posts'));
 
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -27,6 +20,14 @@ mongoose
 
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
+
+// initialize passport
+app.use(passport.initialize());
+require('./middleware/passport')(passport);
+
+// Routes
+app.use('/api/users/', users);
+app.use('/api/posts/', require('./routes/api/posts'));
 
 // Ready for production
 if (process.env.NODE_ENV === 'production') {
