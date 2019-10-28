@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   justifyContent: 'space-between',
   flex: 'auto',
   }
-}))
+}));
 
 const AmeContent = () => {
 

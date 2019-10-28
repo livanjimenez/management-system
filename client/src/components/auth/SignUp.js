@@ -1,5 +1,5 @@
-import React from 'react'; 
-import { makeStyles } from'@material-ui/core/styles';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -12,7 +12,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 //import Link from '@material-ui/core/Link';
 import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 
 
@@ -42,7 +42,7 @@ const SignUp = () => {
 
   //const { user_name, email, password, errors } = user;
   //{ loading, user, onChange, onSubmit }
-  
+
 
   return (
     <div>
@@ -52,7 +52,7 @@ const SignUp = () => {
           <Typography component="h1" variant="h5">Sign Up</Typography>
           <form className={classes.form} noValidate>
             <Grid>
-              <TextField 
+              <TextField
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"

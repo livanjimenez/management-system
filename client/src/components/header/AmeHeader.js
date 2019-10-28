@@ -5,7 +5,8 @@ import {
   Header,
 } from 'mui-layout';
 import AmeLogo from '../../images/Amepower_PNG.png';
-
+import Link from '@material-ui/core/Link';
+import SignUp from '../auth/SignUp';
 
 const useHeaderStyles = makeStyles({
   header: {
@@ -33,7 +34,8 @@ const AmeHeader = () => {
           variant="outlined"
           className={classes.loginButton}
         >
-          Login
+          {/* Not sure if to={} works */}
+          <Link color="inherit" to={SignUp}>Login</Link> 
         </Button>
         
       </Header>
