@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Login = ({ message, loading, user, onChange, onBlur, onSubmit }) => {
+const Login = ({ message, loading, user, onChange, onSubmit }) => {
   const { email, password, errors } = user;
 
   return (
