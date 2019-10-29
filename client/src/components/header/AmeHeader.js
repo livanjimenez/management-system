@@ -6,7 +6,6 @@ import {
 } from 'mui-layout';
 import AmeLogo from '../../images/Amepower_PNG.png';
 import Link from '@material-ui/core/Link';
-import SignUp from '../auth/SignUp';
 
 const useHeaderStyles = makeStyles({
   header: {
@@ -22,6 +21,7 @@ const useHeaderStyles = makeStyles({
 
 const AmeHeader = () => {
   const classes = useHeaderStyles();
+  const preventDefault = event => event.preventDefault();
 
   return (
     <div>
@@ -33,9 +33,9 @@ const AmeHeader = () => {
           size="large"
           variant="outlined"
           className={classes.loginButton}
+          onClick={preventDefault}
         >
-          {/* Not sure if to={} works */}
-          <Link color="inherit" to={SignUp}>Login</Link> 
+          Login
         </Button>
         
       </Header>
