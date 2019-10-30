@@ -18,13 +18,13 @@ import ModuleInputs from '../modules/ModuleInputs';
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 345,
-    width: 500,
-    height: 200,
+    maxWidth: 300,
+    width: 450,
+    height: 250,
   },
   media: {
     //height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: 19, // 16:9
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -95,9 +95,45 @@ export default function Modules() {
         title="Module S/N: "
       />
 
+<CardContent>
+        {<Typography >
+          <p>Module Serial Number: {ModuleID}</p>
+          <p>Module Location: {ModuleLocation}</p>
+        
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+
+
+    <Card className={classes.card} id='card'>
+      <CardHeader
+        action={
+          Checkboxes()
+        }
+      />
+
       <CardContent>
         {<Typography >
-          <p>Module ID: {ModuleID}</p>
+          <p>Module Serial Number: {ModuleID}</p>
           <p>Module Location: {ModuleLocation}</p>
         
         </Typography>}
@@ -133,6 +169,153 @@ export default function Modules() {
                 ))
 
 }
+
+
+    <Card className={classes.card} id='card'>
+      <CardHeader
+        action={
+          Checkboxes()
+        }
+      />
+
+      <CardContent>
+        {<Typography >
+          <p>Module Serial Number: </p>
+          <p>Module Location: </p>
+        
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+
+
+
+    <Card className={classes.card} id='card'>
+      <CardHeader
+        action={
+          Checkboxes()
+        }
+      />
+
+<CardContent>
+        {<Typography >
+          <p>Module Serial Number: </p>
+          <p>Module Location: </p>
+        
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+
+
+
+    <Card className={classes.card} id='card'>
+      <CardHeader
+        action={
+          Checkboxes()
+        }
+      />
+
+      <CardContent>
+        {<Typography >
+          <p>Module Serial Number: </p>
+          <p>Module Location: </p>
+        
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+
+
+
+    <Card className={classes.card} id='card'>
+      <CardHeader
+        action={
+          Checkboxes()
+        }
+      />
+
+      <CardContent>
+        {<Typography >
+          <p>Module Serial Number: </p>
+          <p>Module Location: </p>
+        
+        </Typography>}
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Module log to be shown here.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
 
 
     
