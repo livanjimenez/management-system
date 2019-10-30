@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ModuleInputs from './ModuleInputs';
+import ModuleInputs from '../modules/ModuleInputs';
 import './styles.css';
 
 const Form = () => {

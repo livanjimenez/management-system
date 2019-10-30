@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/styles';
 import FloatingActionButtons from '../modules/AddButton';
 import ContainedButtons from '../modules/Button';
 
+
 const useStyles = makeStyles(theme => ({
   flexContainer: {
     display: 'flex',
@@ -23,9 +24,11 @@ const AmeContent = () => {
     <div>
       <Content>
         <Container className={classes.flexContainer}>
-          <Modules />
+          <Modules/>
         </Container>
+
         {ContainedButtons()}
+
       </Content>
     </div>
   );

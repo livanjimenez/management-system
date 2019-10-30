@@ -13,6 +13,7 @@ import Form from '../forms/Form';
 import Checkboxes from '../modules/Checkbox';
 import FloatingActionButtons from '../modules/AddButton';
 import TextField from '@material-ui/core/TextField';
+import ModuleInputs from '../modules/ModuleInputs';
 
 
 const useStyles = makeStyles(theme => ({
@@ -80,15 +81,18 @@ export default function Modules() {
     setExpanded(!expanded);
   };
 
+
   return (
     <React.Fragment>
-      
+    
+
 
     <Card className={classes.card} id='card'>
       <CardHeader
         action={
           Checkboxes()
         }
+        title="Module S/N: "
       />
 
 <CardContent>
@@ -154,6 +158,17 @@ export default function Modules() {
         </CardContent>
       </Collapse>
     </Card>
+{
+  moduleState.map((val, idx) => (
+                    <ModuleInputs
+                        key={`module-${idx}`}
+                        idx={idx}
+                        moduleState={moduleState}
+                        handleModuleChange={handleModuleChange}
+                    />
+                ))
+
+}
 
 
     <Card className={classes.card} id='card'>
@@ -301,8 +316,15 @@ export default function Modules() {
         </CardContent>
       </Collapse>
     </Card>
+
 
     
+    <button onClick={addModule}>
+      Add Module
+    </button>
+
     </React.Fragment>
+    
   );
 }
+

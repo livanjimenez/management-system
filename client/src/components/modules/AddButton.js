@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import Modules from '../modules/Modules';
+import addModule from '../modules/Modules';
 
 const useStyles = makeStyles(theme => ({
   fab: {
