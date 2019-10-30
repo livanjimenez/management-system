@@ -18,7 +18,7 @@ exports.create = (req, res) => {
   // save module
   module.save()
     .then(data => {
-      res.send(data); 
+      res.send(data);
     })
     .catch(err => {
       res.status(500).send({
@@ -49,7 +49,7 @@ exports.findOne = (req, res) => {
           message: 'Module not found with id ' + req.params.module_id
         });
       }
-      
+
       res.send(module);
     })
     .catch(err => {
@@ -58,13 +58,65 @@ exports.findOne = (req, res) => {
           message: 'Module not found with id ' + req.params.module_id
         });
       }
-      
+
       return res.status(500).send({
-        message: 'Not able to retrieve module with id ' + req.params.module_id 
+        message: 'Not able to retrieve module with id ' + req.params.module_id
       });
     });
 };
 
+// update a module
 exports.update = (req, res) => {
-  // finish this
+  if (!req.body) {
+    return res.status(400).send({
+      message: 'Module content is empty'
+    });
+  }
+
+  Module.findByIdAndUpdate(req.params.module_id, {
+    serial_id: req.body.serial_id || 'no module id',
+    location: req.body.location
+  }, { new: true })
+    .then(module => {
+      if (!module) {
+        return res.status(404).send({
+          message: 'Module not found with id ' + req.params.module_id
+        });
+      }
+      res.send(module);
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: "Module not found with id " + req.params.module_id
+        });
+      }
+      return res.status(500).send({
+        message: 'Not able to update from server'
+      });
+    });
+
+};
+
+// delete a module
+exports.delete = (req, res) => {
+  Module.findByIdAndRemove(req.params.module_id)
+    .then(module => {
+      if (!module) {
+        return res.status(404).send({
+          message: 'Module not found with id ' + req.params.module_id
+        });
+      }
+      res.send({ message: 'Module was deleted successfully!' });
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: "Module not found with id " + req.params.module_id
+        });
+      }
+      return res.status(500).send({
+        message: "Unable to delete product with id " + req.params.module_id
+      });
+    });
 };
