@@ -24,11 +24,8 @@ const AmeContent = () => {
     <div>
       <Content>
         <Container className={classes.flexContainer}>
-          <Modules/>
+         <Modules/>
         </Container>
-
-        {ContainedButtons()}
-
       </Content>
     </div>
   );
