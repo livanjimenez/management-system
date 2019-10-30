@@ -5,6 +5,7 @@ import Modules from '../modules/Modules';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/styles';
 import FloatingActionButtons from '../modules/AddButton';
+import ContainedButtons from '../modules/Button';
 
 const useStyles = makeStyles(theme => ({
   flexContainer: {
@@ -24,7 +25,7 @@ const AmeContent = () => {
         <Container className={classes.flexContainer}>
           <Modules />
         </Container>
-        {FloatingActionButtons()}
+        {ContainedButtons()}
       </Content>
     </div>
   );
