@@ -19,9 +19,9 @@ import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
     card: {
-      maxWidth: 345,
+      maxWidth: 300,
       width: 500,
-      height: 200,
+      height: 'auto',
     },
     media: {
       //height: 0,
