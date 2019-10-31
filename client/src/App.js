@@ -1,6 +1,7 @@
 import React from 'react';
 // import axios-hooks
 import useAxios from 'axios-hooks';
+import ModuleForms from './components/forms/Module.Forms';
 
 function App() {
   const [{ data: getData, loading: getLoading, error: getError }] = useAxios(
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <div>
-      <h1>{JSON.stringify(getData[2].createdAt)}</h1>
+      <h1>{JSON.stringify(getData[2].serial_id)}</h1>
+      <ModuleForms />
     </div>
   );
 }
