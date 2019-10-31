@@ -27,23 +27,14 @@ const Main = () => {
   return (
     <div>
       <ThemeProvider theme={theme}>
-
         <Root config={config}>
-
           <CssBaseline />
-
           <AmeHeader />
-
           <Navbar />
-
           <AmeContent />
-
           <Footer className={classes.footer}>Copyright &copy; AmePower 2019</Footer>
-
         </Root>
-
       </ThemeProvider>
-
     </div>
   );
 };

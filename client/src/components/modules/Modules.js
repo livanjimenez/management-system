@@ -19,8 +19,8 @@ import ModuleInputs from '../modules/ModuleInputs';
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 300,
-      width: 500,
-      height: 'auto',
+    width: 500,
+    height: 'auto',
   },
   media: {
     //height: 0,
@@ -40,28 +40,28 @@ const useStyles = makeStyles(theme => ({
 
 export default function Modules() {
   const [projectState, setProjectState] = useState({
-      project: '',
-      description: '',
+    project: '',
+    description: '',
   });
 
   const handleProjectChange = (e) => setProjectState({
-      ...projectState,
-      [e.target.name]: [e.target.value],
+    ...projectState,
+    [e.target.name]: [e.target.value],
   });
 
   const blankModule = { name: '', location: '' };
   const [moduleState, setModuleState] = useState([
-      { ...blankModule },
+    { ...blankModule },
   ]);
 
   const addModule = () => {
-      setModuleState([...moduleState, { ...blankModule }]);
+    setModuleState([...moduleState, { ...blankModule }]);
   };
 
   const handleModuleChange = (e) => {
-      const updatedModules = [...moduleState];
-      updatedModules[e.target.dataset.idx][e.target.className] = e.target.value;
-      setModuleState(updatedModules);
+    const updatedModules = [...moduleState];
+    updatedModules[e.target.dataset.idx][e.target.className] = e.target.value;
+    setModuleState(updatedModules);
   };
 
 
@@ -85,24 +85,24 @@ export default function Modules() {
   return (
     <React.Fragment>
 
-{
-  moduleState.map((val, idx) => (
-                    <ModuleInputs
-                        key={`module-${idx}`}
-                        idx={idx}
-                        moduleState={moduleState}
-                        handleModuleChange={handleModuleChange}
-                    />
-                ))
+      {
+        moduleState.map((val, idx) => (
+          <ModuleInputs
+            key={`module-${idx}`}
+            idx={idx}
+            moduleState={moduleState}
+            handleModuleChange={handleModuleChange}
+          />
+        ))
 
-}
-    
-    <button onClick={addModule}>
-      Add Module
+      }
+
+      <button onClick={addModule}>
+        Add Module
     </button>
 
     </React.Fragment>
-    
+
   );
 }
 

@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from 'react';
-//import Main from './components/Main';
-import './App.css';
-import axios from 'axios';
+import React from 'react';
+// import axios-hooks
+import useAxios from 'axios-hooks';
 
 function App() {
-  const [state, setState] = useState('');
-  
-  useEffect(() => {
-    axios.get('/modules')
-      .then()
-  });
+  const [{ data: getData, loading: getLoading, error: getError }] = useAxios(
+    '/modules'
+  );
+
+  if (getLoading) return <p>Loading...</p>
+  if (getError) return <p>Error!</p>
 
   return (
     <div>
-
+      <h1>{JSON.stringify(getData[2].createdAt)}</h1>
     </div>
   );
 }
 
 export default App;
-// https://blog.logrocket.com/mern-stack-a-to-z-part-1/

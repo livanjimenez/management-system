@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
 const passport = require('passport');
+const cors = require('cors');
 //const path = require('path');
 //const users = require('./routes/api/users');
 
@@ -11,6 +12,15 @@ const passport = require('passport');
 // parse requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
+
 
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -29,12 +39,7 @@ require('./middleware/passport')(passport);
 require('./routes/module.routes')(app);
 
 // enable CORS for all HTTP methods
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(cors());
 
 // Test for backend working
 app.get('/', (req, res) => {
