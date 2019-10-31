@@ -41,6 +41,10 @@ app.get('/', (req, res) => {
   res.json({ "helloWorld": "Hello World!" });
 });
 
+app.get('/test', (req, res) => {
+  res.send("Testing!");
+});
+
 // Routes
 // app.use('/api/users/', users);
 // app.use('/api/posts/', require('./routes/api/posts'));
