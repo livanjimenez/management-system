@@ -5,7 +5,6 @@ import {
   Header,
 } from 'mui-layout';
 import AmeLogo from '../../images/Amepower_PNG.png';
-import Link from '@material-ui/core/Link';
 
 const useHeaderStyles = makeStyles({
   header: {
@@ -21,23 +20,19 @@ const useHeaderStyles = makeStyles({
 
 const AmeHeader = () => {
   const classes = useHeaderStyles();
-  const preventDefault = event => event.preventDefault();
 
   return (
     <div>
       <Header className={classes.header}>
         <img src={AmeLogo} alt='Logo' style={{ width: '225px', height: '60px' }} />
-        
         <Button
           color="inherit"
           size="large"
           variant="outlined"
           className={classes.loginButton}
-          onClick={preventDefault}
         >
           Login
         </Button>
-        
       </Header>
     </div>
   );

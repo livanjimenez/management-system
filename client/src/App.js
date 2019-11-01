@@ -1,11 +1,11 @@
 import React from 'react';
-import ModuleForms from './components/forms/Module.Forms';
+import Main from './components/Main';
 
 function App() {
 
   return (
     <div>
-      <ModuleForms />
+      <Main />
     </div>
   );
 }
