@@ -67,34 +67,34 @@ export default function ModuleForms() {
   };
 
   return (
-    <div>
-      <Container maxWidth="sm">
-        <br />
-        <Paper className={classes.paper}>
-          <form onSubmit={submit} className={classes.container}>
-            <TextField
-              id="serial_id"
-              className={classes.textField}
-              label="Serial ID"
-              margin="normal"
-              onChange={handleChange}
-              name="serial_id"
-              value={module.serial_id}
-            />
-            <TextField
-              id="location"
-              className={classes.textField}
-              label="Location"
-              margin="normal"
-              onChange={handleChange}
-              name="location"
-              value={module.location}
-            />
-            <Button type="submit">POST</Button>
-          </form>
-        </Paper>
+    <Container maxWidth="sm">
+      <br />
+      <Paper className={classes.paper}>
+        <form onSubmit={submit} className={classes.container}>
+          <TextField
+            id="serial_id"
+            className={classes.textField}
+            label="Serial ID"
+            margin="normal"
+            onChange={handleChange}
+            name="serial_id"
+            value={module.serial_id}
+          />
+          <TextField
+            id="location"
+            className={classes.textField}
+            label="Location"
+            margin="normal"
+            onChange={handleChange}
+            name="location"
+            value={module.location}
+          />
+          <Button type="submit">POST</Button>
+        </form>
+      </Paper>
+      <br />
 
-        <ul>
+      {/* <ul>
         {data.map(item => (
           <li key={item._id}>
             <p>Module Data:</p>
@@ -103,8 +103,7 @@ export default function ModuleForms() {
             <a href={item.url}>Location: {item.location}</a>
           </li>
         ))}
-      </ul>
-      </Container>
-    </div>
+      </ul> */}
+    </Container>
   );
 }
