@@ -6,20 +6,17 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    padding: theme.spacing(3, 2),
-    margin: 'auto',
-    position: 'relative',
-    justifyContent: 'center',
-    outline: 0,
-    display: 'flex',
-    borderRadius: '4px',
+    padding: theme.spacing(2),
+    
   },
   root: {
-    fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif'
+    fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
+    flexGrow: 1,
   },
 }));
 
@@ -37,25 +34,35 @@ export default function ModuleDisplayData() {
     fetchData();
   }, []);
 
+  // maybe add another <GRID> to create rows for the modules
+
   return (
-    <Container maxWidth="xs" className={classes.root}>
-      <Paper className={classes.paper}>
-        <Typography
-          align="center"
-          variant="h6"
-        >
-          <List>
-            {data.map(item => (
+    <Grid
+    container 
+    item xs={3}
+    direction="row"
+    alignItems="flex-start"
+    justify="flex-start"
+    >
+    <Container maxWidth="xs">
+      {data.map(item => (
+        <Paper className={classes.paper}>
+          <Typography
+            align="center"
+            variant="h6"
+          >
+            <List>
               <ListItem>
                 <ListItemText>Serial ID:</ListItemText>
                 <ListItemText>{item.serial_id}</ListItemText>
                 <ListItemText>Location:</ListItemText>
                 <ListItemText>{item.location}</ListItemText>
               </ListItem>
-            ))}
-          </List>
-        </Typography>
-      </Paper>
+            </List>
+          </Typography>
+        </Paper>
+      ))}
     </Container>
+    </Grid>
   );
 }
