@@ -64,6 +64,15 @@ export default function ModuleDisplayData() {
                       </Typography>
                     </ListItemText>
                   </ListItem>
+                  <ListItem>
+                    <ListItemText>
+                      <Typography
+                        align="center"
+                      >
+                        Created: {item.createdAt}
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
                 </List>
               </Paper>
             </Grid>
