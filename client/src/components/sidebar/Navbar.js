@@ -21,15 +21,12 @@ import {
 } from '@material-ui/core';
 import { Nav } from 'mui-layout';
 
-
-
-
 const Navbar = () => {
   return (
     <div>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
         <List>
-          <ListItem button>
+          <ListItem button disabled="true">
             <ListItemIcon>
               <Icon>
                 <Home />
@@ -41,7 +38,7 @@ const Navbar = () => {
             />
           </ListItem>
 
-          <ListItem button>
+          <ListItem button disabled="true">
             <ListItemIcon>
               <Icon>
                 <FolderOpen />
@@ -53,7 +50,7 @@ const Navbar = () => {
             />
           </ListItem>
 
-          <ListItem button>
+          <ListItem button disabled="true">
             <ListItemIcon>
               <Icon>
                 <Build />
@@ -65,7 +62,7 @@ const Navbar = () => {
             />
           </ListItem>
 
-          <ListItem button>
+          <ListItem button disabled="true">
             <ListItemIcon>
               <Icon>
                 <PlaylistAddCheck />
@@ -77,7 +74,7 @@ const Navbar = () => {
             />
           </ListItem>
 
-          <ListItem button>
+          <ListItem button disabled="true">
             <ListItemIcon>
               <Icon>
                 <LocalShipping />
@@ -89,7 +86,7 @@ const Navbar = () => {
             />
           </ListItem>
 
-          <ListItem button>
+          <ListItem button disabled="true">
             <ListItemIcon>
               <Icon>
                 <Assessment />
@@ -103,7 +100,7 @@ const Navbar = () => {
 
           <Divider style={{ margin: "12px 0" }} />
 
-          <ListItem button>
+          <ListItem button disabled="true">
             <ListItemIcon>
               <Icon>
                 <Send />
@@ -115,7 +112,7 @@ const Navbar = () => {
             />
           </ListItem>
 
-          <ListItem button>
+          <ListItem button disabled="true">
             <ListItemIcon>
               <Icon >
                 <Settings />

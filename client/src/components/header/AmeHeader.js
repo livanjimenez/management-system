@@ -30,6 +30,7 @@ const AmeHeader = () => {
           size="large"
           variant="outlined"
           className={classes.loginButton}
+          disabled="true"
         >
           Login
         </Button>
