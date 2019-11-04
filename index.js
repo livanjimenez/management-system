@@ -3,16 +3,16 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
-const passport = require('passport');
 const cors = require('cors');
-//const path = require('path');
-//const users = require('./routes/api/users');
 
 // middleware
 // parse requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+require('./routes/module.routes')(app);
 
+// enable CORS for all HTTP methods
+app.use(cors());
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -20,7 +20,6 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-
 
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -32,35 +31,10 @@ mongoose
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
 
-// initialize passport
-app.use(passport.initialize());
-require('./middleware/passport')(passport);
-
-require('./routes/module.routes')(app);
-
-// enable CORS for all HTTP methods
-app.use(cors());
-
 // Test for backend working
 app.get('/', (req, res) => {
   res.json({ "helloWorld": "Hello World!" });
 });
-
-app.get('/test', (req, res) => {
-  res.send("Testing!");
-});
-
-// Routes
-// app.use('/api/users/', users);
-// app.use('/api/posts/', require('./routes/api/posts'));
-
-// Ready for production
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static('client/build'));
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   });
-// }
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on ${port}`));
