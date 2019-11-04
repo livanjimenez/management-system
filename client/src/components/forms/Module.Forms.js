@@ -37,7 +37,8 @@ export default function ModuleForms() {
   const [module, setModule] = useState({
     _id: '',
     serial_id: '',
-    location: ''
+    location: '',
+    createdAt: ''
   });
 
   useEffect(() => {
@@ -55,6 +56,7 @@ export default function ModuleForms() {
     const data = {
       serial_id: module.serial_id,
       location: module.location,
+      createdAt: module.createdAt,
     };
 
     axios.post('/modules', data)
