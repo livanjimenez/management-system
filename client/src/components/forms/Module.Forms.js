@@ -95,17 +95,6 @@ export default function ModuleForms() {
         </form>
       </Paper>
       <br />
-
-      {/* <ul>
-        {data.map(item => (
-          <li key={item._id}>
-            <p>Module Data:</p>
-            <a href={item.url}>Serial ID: {item.serial_id}</a>
-            <br />
-            <a href={item.url}>Location: {item.location}</a>
-          </li>
-        ))}
-      </ul> */}
     </Container>
   );
 }
