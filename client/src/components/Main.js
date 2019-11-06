@@ -2,7 +2,6 @@ import React from 'react';
 import { ThemeProvider, } from '@material-ui/styles';
 import { createMuiTheme, CssBaseline } from "@material-ui/core";
 import AmeHeader from './header/AmeHeader';
-import AmeContent from './content/AmeContent';
 import Navbar from './sidebar/Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -31,7 +30,6 @@ const Main = () => {
           <CssBaseline />
           <AmeHeader />
           <Navbar />
-          
           <Footer className={classes.footer}>Copyright &copy; AmePower 2019</Footer>
         </Root>
       </ThemeProvider>
