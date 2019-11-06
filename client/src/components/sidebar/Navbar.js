@@ -21,6 +21,7 @@ import {
   Icon,
 } from '@material-ui/core';
 import { Nav } from 'mui-layout';
+// Used to link NavBar to /pages/{PageLink.js}
 import {
   BrowserRouter as Router,
   Link,
@@ -28,6 +29,7 @@ import {
   Switch
 } from 'react-router-dom';
 import Homelink from '../pages/Home';
+import ActiveProjects from '../pages/ActiveProjects';
 
 const useStyles = makeStyles(theme => ({
   link: {
@@ -148,6 +150,7 @@ const Navbar = () => {
       </Nav>
       <Switch>
         <Route exact path="/homelink" component={Homelink} />
+        <Route path="/activeprojects" component={ActiveProjects} />
       </Switch>
     </Router>
   );
