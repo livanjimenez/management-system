@@ -7,19 +7,13 @@
     "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.5.0",
     "axios": "^0.19.0",
-    "axios-hooks": "^1.6.0",
     "eslint-utils": "^1.4.2",
-    "jwt-decode": "^2.2.0",
     "material-design-icons": "^3.0.1",
     "mui-layout": "^1.2.9",
-    "node-sass": "^4.13.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.1.1",
-    "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0"
+    "react-scripts": "3.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
