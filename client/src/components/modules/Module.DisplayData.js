@@ -7,6 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
@@ -33,6 +34,12 @@ export default function ModuleDisplayData() {
     fetchData();
   }, []);
 
+  // DELETE FROM DB
+  const deleteModule = (id) => {
+    axios.delete(`/modules/${id}`)
+      .then(res => console.log(res.data));
+  };
+
   return (
     <Container maxWidth="xl" className={classes.root}>
       <Grid
@@ -45,6 +52,7 @@ export default function ModuleDisplayData() {
           data.map(item => (
             <Grid item xs={3}>
               <Paper className={classes.paper}>
+                <Button onClick={() => { deleteModule(item._id) }}>DELETE</Button>
                 <List>
                   <ListItem>
                     <ListItemText>
@@ -52,6 +60,15 @@ export default function ModuleDisplayData() {
                         align="center"
                       >
                         Serial ID: {item.serial_id}
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText>
+                      <Typography
+                        align="center"
+                      >
+                        _id: {item._id}
                       </Typography>
                     </ListItemText>
                   </ListItem>
