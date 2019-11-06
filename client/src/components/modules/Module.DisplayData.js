@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
     flexGrow: 1,
   },
+  button: {
+    margin: theme.spacing(1),
+  },
 }));
 
 export default function ModuleDisplayData() {
@@ -52,7 +55,6 @@ export default function ModuleDisplayData() {
           data.map(item => (
             <Grid item xs={3}>
               <Paper className={classes.paper}>
-                <Button onClick={() => { deleteModule(item._id) }}>DELETE</Button>
                 <List>
                   <ListItem>
                     <ListItemText>
@@ -91,6 +93,14 @@ export default function ModuleDisplayData() {
                     </ListItemText>
                   </ListItem>
                 </List>
+                <Button 
+                onClick={() => { deleteModule(item._id) }}
+                color="secondary"
+                variant="contained"
+                className={classes.button}
+                >
+                  DELETE
+                </Button>
               </Paper>
             </Grid>
           ))
