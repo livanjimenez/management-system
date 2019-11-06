@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   ChevronLeft,
   ChevronRight,
@@ -65,10 +65,10 @@ const Navbar = () => {
               </Icon>
             </ListItemIcon>
             <Link to="/activeprojects" className={classes.link}>
-            <ListItemText
-              primary={"Active Projects"}
-              primaryTypographyProps={{ noWrap: true }}
-            />
+              <ListItemText
+                primary={"Active Projects"}
+                primaryTypographyProps={{ noWrap: true }}
+              />
             </Link>
           </ListItem>
 
