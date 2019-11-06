@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -32,6 +33,18 @@ export default function ModuleDisplayData() {
 
     fetchData();
   }, []);
+
+  const [remove, setRemove] = useState({
+    _id: '',
+  });
+
+  const handleDelete = () => {
+    const id = {
+      _id: remove._id
+    };
+
+    axios.delete(`/modules/${id._id}`);
+  };
 
   return (
     <Container maxWidth="xl" className={classes.root}>
@@ -74,6 +87,7 @@ export default function ModuleDisplayData() {
                     </ListItemText>
                   </ListItem>
                 </List>
+                <button onClick={handleDelete}>DELETE</button>
               </Paper>
             </Grid>
           ))

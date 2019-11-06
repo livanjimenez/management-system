@@ -12,7 +12,8 @@ exports.create = (req, res) => {
   // not complete, needs to be updated with more data
   const module = new Module({
     serial_id: req.body.serial_id,
-    location: req.body.location
+    location: req.body.location,
+    
   });
 
   // save module

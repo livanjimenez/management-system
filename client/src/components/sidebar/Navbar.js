@@ -26,7 +26,7 @@ const Navbar = () => {
     <div>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
         <List>
-          <ListItem button disabled="true">
+          <ListItem button>
             <ListItemIcon>
               <Icon>
                 <Home />
@@ -35,6 +35,7 @@ const Navbar = () => {
             <ListItemText
               primary={"Home"}
               primaryTypographyProps={{ noWrap: true }}
+              hred="#"
             />
           </ListItem>
 

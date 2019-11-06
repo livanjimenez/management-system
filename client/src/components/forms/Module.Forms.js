@@ -31,8 +31,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function ModuleForms() {
   const classes = useStyles();
-  // GET
-  const [data, setData] = useState([]);
+
   // POST
   const [module, setModule] = useState({
     _id: '',
@@ -40,15 +39,6 @@ export default function ModuleForms() {
     location: '',
     createdAt: ''
   });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios('/modules');
-      setData(result.data);
-    };
-
-    fetchData();
-  }, []);
 
   const submit = e => {
     e.preventDefault();
