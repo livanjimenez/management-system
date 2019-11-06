@@ -31,7 +31,7 @@ const Main = () => {
           <CssBaseline />
           <AmeHeader />
           <Navbar />
-          <AmeContent />
+          
           <Footer className={classes.footer}>Copyright &copy; AmePower 2019</Footer>
         </Root>
       </ThemeProvider>

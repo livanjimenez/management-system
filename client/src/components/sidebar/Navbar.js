@@ -1,4 +1,5 @@
 import React from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 import {
   ChevronLeft,
   ChevronRight,
@@ -28,7 +29,15 @@ import {
 } from 'react-router-dom';
 import Homelink from '../pages/Home';
 
+const useStyles = makeStyles(theme => ({
+  link: {
+    textDecoration: 'none',
+  },
+}));
+
 const Navbar = () => {
+  const classes = useStyles();
+
   return (
     <Router>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
@@ -39,7 +48,7 @@ const Navbar = () => {
                 <Home />
               </Icon>
             </ListItemIcon>
-            <Link to="/homelink" style={{ textDecoration: 'none' }}>
+            <Link to="/homelink" className={classes.link}>
               <ListItemText
                 primary={"Home"}
                 primaryTypographyProps={{ noWrap: true }}
@@ -50,27 +59,15 @@ const Navbar = () => {
           <ListItem button>
             <ListItemIcon>
               <Icon>
-                <Home />
-              </Icon>
-            </ListItemIcon>
-            <Link to="/about" style={{ textDecoration: 'none' }}>
-              <ListItemText
-                primary={"About"}
-                primaryTypographyProps={{ noWrap: true }}
-              />
-            </Link>
-          </ListItem>
-
-          <ListItem button disabled="true">
-            <ListItemIcon>
-              <Icon>
                 <FolderOpen />
               </Icon>
             </ListItemIcon>
+            <Link to="/activeprojects" className={classes.link}>
             <ListItemText
               primary={"Active Projects"}
               primaryTypographyProps={{ noWrap: true }}
             />
+            </Link>
           </ListItem>
 
           <ListItem button disabled="true">
