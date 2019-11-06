@@ -20,10 +20,17 @@ import {
   Icon,
 } from '@material-ui/core';
 import { Nav } from 'mui-layout';
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch
+} from 'react-router-dom';
+import Homelink from '../pages/Home';
 
 const Navbar = () => {
   return (
-    <div>
+    <Router>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
         <List>
           <ListItem button>
@@ -32,11 +39,26 @@ const Navbar = () => {
                 <Home />
               </Icon>
             </ListItemIcon>
-            <ListItemText
-              primary={"Home"}
-              primaryTypographyProps={{ noWrap: true }}
-              hred="#"
-            />
+            <Link to="/homelink" style={{ textDecoration: 'none' }}>
+              <ListItemText
+                primary={"Home"}
+                primaryTypographyProps={{ noWrap: true }}
+              />
+            </Link>
+          </ListItem>
+
+          <ListItem button>
+            <ListItemIcon>
+              <Icon>
+                <Home />
+              </Icon>
+            </ListItemIcon>
+            <Link to="/about" style={{ textDecoration: 'none' }}>
+              <ListItemText
+                primary={"About"}
+                primaryTypographyProps={{ noWrap: true }}
+              />
+            </Link>
           </ListItem>
 
           <ListItem button disabled="true">
@@ -125,8 +147,12 @@ const Navbar = () => {
             />
           </ListItem>
         </List>
+
       </Nav>
-    </div>
+      <Switch>
+        <Route exact path="/homelink" component={Homelink} />
+      </Switch>
+    </Router>
   );
 };
 

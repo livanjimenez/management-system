@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
@@ -34,7 +34,6 @@ export default function ModuleForms() {
 
   // POST
   const [module, setModule] = useState({
-    _id: '',
     serial_id: '',
     location: '',
     createdAt: ''
