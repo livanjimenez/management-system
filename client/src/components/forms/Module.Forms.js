@@ -5,6 +5,7 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
+import Dropdown from "./dropdown";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -71,15 +72,8 @@ export default function ModuleForms() {
             name="serial_id"
             value={module.serial_id}
           />
-          <TextField
-            id="location"
-            className={classes.textField}
-            label="Location"
-            margin="normal"
-            onChange={handleChange}
-            name="location"
-            value={module.location}
-          />
+          <Dropdown/>
+          
           <Button type="submit">POST</Button>
         </form>
       </Paper>
