@@ -44,33 +44,36 @@ const Navbar = () => {
     <Router>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
         <List>
-          <ListItem button>
-            <ListItemIcon>
-              <Icon>
-                <Home />
-              </Icon>
-            </ListItemIcon>
-            <Link to="/homelink" className={classes.link}>
+          <Link to="/homelink" className={classes.link}>
+            <ListItem button>
+              <ListItemIcon>
+                <Icon>
+                  <Home />
+                </Icon>
+              </ListItemIcon>
+
               <ListItemText
                 primary={"Home"}
                 primaryTypographyProps={{ noWrap: true }}
               />
-            </Link>
-          </ListItem>
 
-          <ListItem button>
-            <ListItemIcon>
-              <Icon>
-                <FolderOpen />
-              </Icon>
-            </ListItemIcon>
-            <Link to="/activeprojects" className={classes.link}>
+            </ListItem>
+          </Link>
+
+          <Link to="/activeprojects" className={classes.link}>
+            <ListItem button>
+              <ListItemIcon>
+                <Icon>
+                  <FolderOpen />
+                </Icon>
+              </ListItemIcon>
+
               <ListItemText
                 primary={"Active Projects"}
                 primaryTypographyProps={{ noWrap: true }}
               />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
 
           <ListItem button disabled="true">
             <ListItemIcon>
