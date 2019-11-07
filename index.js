@@ -9,7 +9,10 @@ const cors = require('cors');
 // parse requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// routes
 require('./routes/module.routes')(app);
+require('./routes/activeprojects.routes')(app);
 
 // enable CORS for all HTTP methods
 app.use(cors());

@@ -117,7 +117,7 @@ exports.delete = (req, res) => {
         });
       }
       return res.status(500).send({
-        message: "Unable to delete product with id " + req.params.module_id
+        message: "Unable to delete module with id " + req.params.module_id
       });
     });
 };
