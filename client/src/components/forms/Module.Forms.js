@@ -49,7 +49,7 @@ export default function ModuleForms() {
     };
 
     axios.post('/modules', data)
-      .then(res => console.log(res))
+      .then(res => console.log(res));
   };
 
   const handleChange = e => {
