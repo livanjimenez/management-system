@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
+import axios from 'axios';
+import {
+BrowserRouter as Router,
+Switch,
+Link,
+Route
+} from 'react-router-dom';
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -50,7 +54,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function CustomizedSelects() {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [age, setAge] = useState('');
   const handleChange = event => {
     setAge(event.target.value);
   };

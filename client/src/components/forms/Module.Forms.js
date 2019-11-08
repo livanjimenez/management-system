@@ -39,7 +39,6 @@ export default function ModuleForms() {
   const [module, setModule] = useState({
     serial_id: '',
     location: '',
-    createdAt: ''
   });
   
   const submit = e => {
@@ -81,7 +80,6 @@ export default function ModuleForms() {
           <ConfirmationDialog />
           <Dropdown/>
           <Button type="submit">POST</Button>
-
         </form>
       </Paper>
       <br />
