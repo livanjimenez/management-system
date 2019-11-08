@@ -58,11 +58,6 @@ export default function ModuleForms() {
     setModule({ ...module, [e.target.name]: e.target.value });
   };
 
-  const confirm = () => {
-    this.state.callback()
-    this.hide()
-  }
-
   return (
     <Container maxWidth="sm">
       <br />
@@ -77,9 +72,8 @@ export default function ModuleForms() {
             name="serial_id"
             value={module.serial_id}
           />
-          <ConfirmationDialog />
           <Dropdown />
-          <Button type="submit">POST</Button>
+          <ConfirmationDialog />
         </form>
       </Paper>
       <br />
