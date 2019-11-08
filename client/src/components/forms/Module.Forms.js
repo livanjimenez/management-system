@@ -5,6 +5,7 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
+import ConfirmationDialog from './ConfirmationDialog';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -38,10 +39,10 @@ export default function ModuleForms() {
     location: '',
     createdAt: ''
   });
-
+  
   const submit = e => {
-    e.preventDefault();
 
+    e.preventDefault();
     const data = {
       serial_id: module.serial_id,
       location: module.location,
@@ -56,6 +57,11 @@ export default function ModuleForms() {
     e.persist();
     setModule({ ...module, [e.target.name]: e.target.value });
   };
+
+  const confirm = () => {
+    this.state.callback()
+    this.hide()
+  }
 
   return (
     <Container maxWidth="sm">
@@ -80,7 +86,8 @@ export default function ModuleForms() {
             name="location"
             value={module.location}
           />
-          <Button type="submit">POST</Button>
+          <ConfirmationDialog />
+          
         </form>
       </Paper>
       <br />

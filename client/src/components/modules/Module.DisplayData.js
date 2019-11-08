@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import Checkbox from './Checkbox';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -55,6 +56,7 @@ export default function ModuleDisplayData() {
           data.map(item => (
             <Grid item xs={3}>
               <Paper className={classes.paper}>
+                <Checkbox />
                 <List>
                   <ListItem>
                     <ListItemText>
