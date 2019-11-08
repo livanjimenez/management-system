@@ -30,12 +30,12 @@ export default function ModuleDisplayData() {
   // GET DATA FROM DB
   const [data, setData] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios('/modules');
-      setData(result.data);
-    };
-
-    fetchData();
+    (async () => {
+      setData(
+        await axios('/modules')
+          .then(res => res.data)
+      );
+    })();
   }, []);
 
   // DELETE FROM DB

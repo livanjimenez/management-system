@@ -3,6 +3,7 @@ import { Content } from 'mui-layout';
 import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
+import Modules from '../modules/Module.DisplayData';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -41,6 +42,7 @@ export default function ActiveProjects() {
           <li>{item.newProjectName}</li>
         </ul>
       ))}
+      <Modules />
     </Content>
   );
 }

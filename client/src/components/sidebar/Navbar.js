@@ -6,7 +6,6 @@ import {
   PlaylistAddCheck,
   LocalShipping,
   Build,
-  Home,
   Assessment,
   FolderOpen,
   Settings,
@@ -29,7 +28,6 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Homelink from '../pages/Home';
 import ActiveProjects from '../pages/ActiveProjects';
 import NewProjectForm from '../pages/NewProject.Forms';
 
@@ -47,21 +45,7 @@ const Navbar = () => {
     <Router>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
         <List>
-          <Link to="/homelink" className={classes.link}>
-            <ListItem button>
-              <ListItemIcon>
-                <Icon>
-                  <Home />
-                </Icon>
-              </ListItemIcon>
-              <ListItemText
-                primary={"Home"}
-                primaryTypographyProps={{ noWrap: true }}
-              />
-            </ListItem>
-          </Link>
-
-          <Link to="/activeprojects" className={classes.link}>
+          <Link to="/" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
                 <Icon>
@@ -166,9 +150,8 @@ const Navbar = () => {
 
       </Nav>
       <Switch>
-        <Route exact path="/homelink" component={Homelink} />
-        <Route path="/activeprojects" component={ActiveProjects} />
-        <Route path="/newproject" component={NewProjectForm} />
+        <Route exact path="/" component={ActiveProjects} />
+        <Route exact path="/newproject" component={NewProjectForm} />
       </Switch>
     </Router>
   );
