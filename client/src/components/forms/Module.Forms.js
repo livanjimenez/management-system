@@ -46,7 +46,6 @@ export default function ModuleForms() {
     const data = {
       serial_id: module.serial_id,
       location: module.location,
-      createdAt: module.createdAt,
     };
 
     axios.post('/modules', data)
