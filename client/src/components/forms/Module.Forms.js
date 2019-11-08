@@ -40,7 +40,7 @@ export default function ModuleForms() {
     serial_id: '',
     location: '',
   });
-  
+
   const submit = e => {
 
     e.preventDefault();
@@ -78,7 +78,7 @@ export default function ModuleForms() {
             value={module.serial_id}
           />
           <ConfirmationDialog />
-          <Dropdown/>
+          <Dropdown />
           <Button type="submit">POST</Button>
         </form>
       </Paper>
