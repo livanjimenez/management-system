@@ -10,7 +10,8 @@ import {
   Assessment,
   FolderOpen,
   Settings,
-  Send
+  Send,
+  AddCircle,
 } from "@material-ui/icons";
 import {
   Divider,
@@ -30,10 +31,12 @@ import {
 } from 'react-router-dom';
 import Homelink from '../pages/Home';
 import ActiveProjects from '../pages/ActiveProjects';
+import NewProjectForm from '../pages/NewProject.Forms';
 
 const useStyles = makeStyles(theme => ({
   link: {
     textDecoration: 'none',
+    
   },
 }));
 
@@ -51,12 +54,10 @@ const Navbar = () => {
                   <Home />
                 </Icon>
               </ListItemIcon>
-
               <ListItemText
                 primary={"Home"}
                 primaryTypographyProps={{ noWrap: true }}
               />
-
             </ListItem>
           </Link>
 
@@ -67,9 +68,22 @@ const Navbar = () => {
                   <FolderOpen />
                 </Icon>
               </ListItemIcon>
-
               <ListItemText
                 primary={"Active Projects"}
+                primaryTypographyProps={{ noWrap: true }}
+              />
+            </ListItem>
+          </Link>
+
+          <Link to="/newproject" className={classes.link}>
+            <ListItem button>
+              <ListItemIcon>
+                <Icon>
+                  <AddCircle />
+                </Icon>
+              </ListItemIcon>
+              <ListItemText
+                primary={"Create New Project"}
                 primaryTypographyProps={{ noWrap: true }}
               />
             </ListItem>
@@ -154,6 +168,7 @@ const Navbar = () => {
       <Switch>
         <Route exact path="/homelink" component={Homelink} />
         <Route path="/activeprojects" component={ActiveProjects} />
+        <Route path="/newproject" component={NewProjectForm} />
       </Switch>
     </Router>
   );

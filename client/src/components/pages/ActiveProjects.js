@@ -2,8 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Content } from 'mui-layout';
 import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  title: {
+    paddingTop: '3%',
+  },
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
 
 export default function ActiveProjects() {
+  const classes = useStyles();
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -16,21 +27,20 @@ export default function ActiveProjects() {
   }, []);
 
   return (
-    <div>
-      <Content>
+    <Content>
       <Typography
         align="center"
         variant="h2"
-        >
-          ACTIVE PROJECTS
+        className={classes.title}
+      >
+        ACTIVE PROJECTS
         </Typography>
 
-        {projects.map(item => (
-          <ul>
-            <li>{item.newProjectName}</li>
-          </ul>
-        ))}
-      </Content>
-    </div>
+      {projects.map(item => (
+        <ul>
+          <li>{item.newProjectName}</li>
+        </ul>
+      ))}
+    </Content>
   );
 }
