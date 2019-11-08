@@ -58,6 +58,7 @@ export default function ModuleDisplayData() {
               <Paper className={classes.paper}>
                 <Checkbox />
                 <List>
+
                   <ListItem>
                     <ListItemText>
                       <Typography
@@ -67,15 +68,7 @@ export default function ModuleDisplayData() {
                       </Typography>
                     </ListItemText>
                   </ListItem>
-                  <ListItem>
-                    <ListItemText>
-                      <Typography
-                        align="center"
-                      >
-                        _id: {item._id}
-                      </Typography>
-                    </ListItemText>
-                  </ListItem>
+
                   <ListItem>
                     <ListItemText>
                       <Typography
@@ -85,21 +78,13 @@ export default function ModuleDisplayData() {
                       </Typography>
                     </ListItemText>
                   </ListItem>
-                  <ListItem>
-                    <ListItemText>
-                      <Typography
-                        align="center"
-                      >
-                        Created: {item.createdAt}
-                      </Typography>
-                    </ListItemText>
-                  </ListItem>
+
                 </List>
-                <Button 
-                onClick={() => { deleteModule(item._id) }}
-                color="secondary"
-                variant="contained"
-                className={classes.button}
+                <Button
+                  onClick={() => { deleteModule(item._id) }}
+                  color="secondary"
+                  variant="contained"
+                  className={classes.button}
                 >
                   DELETE
                 </Button>
