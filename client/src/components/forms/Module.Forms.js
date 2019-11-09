@@ -5,7 +5,6 @@ import axios from 'axios';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import ConfirmationDialog from './ConfirmationDialog';
-import Dropdown from "./dropdown";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -57,7 +56,7 @@ export default function ModuleForms() {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="xs">
       <br />
       <Paper className={classes.paper}>
         <form onSubmit={submit} className={classes.container}>
@@ -70,7 +69,15 @@ export default function ModuleForms() {
             name="serial_id"
             value={module.serial_id}
           />
-          <Dropdown />
+          <TextField
+            id="location"
+            className={classes.textField}
+            label="Location"
+            margin="normal"
+            onChange={handleChange}
+            name="location"
+            value={module.location}
+          />
           <ConfirmationDialog />
         </form>
       </Paper>

@@ -7,8 +7,16 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
 
 export default function ResponsiveDialog() {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -24,9 +32,15 @@ export default function ResponsiveDialog() {
   return (
     <div>
 
-        <Button type='submit' variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button
+        type='submit'
+        color="inherit"
+        className={classes.button}
+        onClick={handleClickOpen}
+        variant="outlined"
+      >
         Post
-        </Button>
+      </Button>
 
       <Dialog
         fullScreen={fullScreen}
@@ -41,10 +55,10 @@ export default function ResponsiveDialog() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary">
             Yes
           </Button>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={handleClose} color="primary">
             No
           </Button>
         </DialogActions>

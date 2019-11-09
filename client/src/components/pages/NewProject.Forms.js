@@ -1,13 +1,28 @@
 import React from 'react';
 import { Content } from 'mui-layout';
+import ModuleForm from '../forms/Module.Forms';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-// add form to this area!
+const useStyles = makeStyles(theme => ({
+  title: {
+    paddingTop: '1%',
+  },
+}));
 
 export default function NewProjectForm() {
+  const classes = useStyles();
+
   return (
-      <Content>
-        <h1>New Project Form</h1>
-        
-      </Content>
+    <Content>
+      <Typography
+        align="center"
+        variant="h2"
+        className={classes.title}
+      >
+        CREATE NEW PROJECT
+      </Typography>
+      <ModuleForm />
+    </Content>
   );
 }

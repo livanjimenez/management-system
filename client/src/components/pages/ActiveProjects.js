@@ -7,7 +7,7 @@ import Modules from '../modules/Module.DisplayData';
 
 const useStyles = makeStyles(theme => ({
   title: {
-    paddingTop: '3%',
+    paddingTop: '1%',
   },
   button: {
     margin: theme.spacing(1),
