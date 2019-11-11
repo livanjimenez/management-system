@@ -20,7 +20,7 @@ export default function NewProjectForm() {
         variant="h2"
         className={classes.title}
       >
-        CREATE NEW PROJECT
+        CREATE NEW MODULE
       </Typography>
       <ModuleForm />
     </Content>

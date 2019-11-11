@@ -53,7 +53,7 @@ const Navbar = () => {
                 </Icon>
               </ListItemIcon>
               <ListItemText
-                primary={"Active Projects"}
+                primary={"Modules"}
                 primaryTypographyProps={{ noWrap: true }}
               />
             </ListItem>
@@ -67,7 +67,7 @@ const Navbar = () => {
                 </Icon>
               </ListItemIcon>
               <ListItemText
-                primary={"Create New Project"}
+                primary={"Create"}
                 primaryTypographyProps={{ noWrap: true }}
               />
             </ListItem>
