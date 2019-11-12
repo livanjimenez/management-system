@@ -30,6 +30,7 @@ import {
 } from 'react-router-dom';
 import ActiveProjects from '../pages/ActiveProjects';
 import NewProjectForm from '../pages/NewProject.Forms';
+import Production from '../pages/Production';
 
 const useStyles = makeStyles(theme => ({
   link: {
@@ -45,20 +46,6 @@ const Navbar = () => {
     <Router>
       <Nav renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}>
         <List>
-          <Link to="/" className={classes.link}>
-            <ListItem button>
-              <ListItemIcon>
-                <Icon>
-                  <FolderOpen />
-                </Icon>
-              </ListItemIcon>
-              <ListItemText
-                primary={"Modules"}
-                primaryTypographyProps={{ noWrap: true }}
-              />
-            </ListItem>
-          </Link>
-
           <Link to="/newproject" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
@@ -73,17 +60,33 @@ const Navbar = () => {
             </ListItem>
           </Link>
 
-          <ListItem button disabled="true">
-            <ListItemIcon>
-              <Icon>
-                <Build />
-              </Icon>
-            </ListItemIcon>
-            <ListItemText
-              primary={"Production"}
-              primaryTypographyProps={{ noWrap: true }}
-            />
-          </ListItem>
+          <Link to="/" className={classes.link}>
+            <ListItem button>
+              <ListItemIcon>
+                <Icon>
+                  <FolderOpen />
+                </Icon>
+              </ListItemIcon>
+              <ListItemText
+                primary={"Modules"}
+                primaryTypographyProps={{ noWrap: true }}
+              />
+            </ListItem>
+          </Link>
+
+          <Link to="/production" className={classes.link}>
+            <ListItem button>
+              <ListItemIcon>
+                <Icon>
+                  <Build />
+                </Icon>
+              </ListItemIcon>
+              <ListItemText
+                primary={"Production"}
+                primaryTypographyProps={{ noWrap: true }}
+              />
+            </ListItem>
+          </Link>
 
           <ListItem button disabled="true">
             <ListItemIcon>
@@ -152,6 +155,7 @@ const Navbar = () => {
       <Switch>
         <Route exact path="/" component={ActiveProjects} />
         <Route exact path="/newproject" component={NewProjectForm} />
+        <Route exact path="/production" component={Production} />
       </Switch>
     </Router>
   );

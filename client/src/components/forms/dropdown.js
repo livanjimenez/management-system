@@ -3,13 +3,6 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
-import axios from 'axios';
-import {
-BrowserRouter as Router,
-Switch,
-Link,
-Route
-} from 'react-router-dom';
 
 const BootstrapInput = withStyles(theme => ({
   root: {

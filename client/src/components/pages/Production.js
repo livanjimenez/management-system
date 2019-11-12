@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ActiveProjects() {
+export default function Production() {
   const classes = useStyles();
   
   return (
@@ -23,7 +23,7 @@ export default function ActiveProjects() {
         variant="h2"
         className={classes.title}
       >
-        ACTIVE MODULES
+        PRODUCTION
         </Typography>
       <Modules />
     </Content>

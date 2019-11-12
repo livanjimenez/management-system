@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
-import ConfirmationDialog from './ConfirmationDialog';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -27,6 +27,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif'
   },
+  button: {
+    margin: theme.spacing(2),
+  },
 }));
 
 export default function ModuleForms() {
@@ -41,6 +44,7 @@ export default function ModuleForms() {
   const submit = e => {
 
     e.preventDefault();
+
     const data = {
       serial_id: module.serial_id,
       location: module.location,
@@ -78,7 +82,14 @@ export default function ModuleForms() {
             name="location"
             value={module.location}
           />
-          <ConfirmationDialog />
+          <Button 
+          type="submit"
+          color="primary"
+          variant="contained"
+          className={classes.button}
+          >
+            POST
+          </Button>
         </form>
       </Paper>
       <br />

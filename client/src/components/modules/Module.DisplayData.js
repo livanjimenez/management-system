@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
-import Checkbox from './Checkbox';
+import SwitchTab from './SwitchTab';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -20,6 +20,10 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   button: {
+    margin: theme.spacing(1),
+    float: 'right',
+  },
+  send: {
     margin: theme.spacing(1),
   },
 }));
@@ -41,7 +45,7 @@ export default function ModuleDisplayData() {
   // DELETE FROM DB
   const deleteModule = (id) => {
     axios.delete(`/modules/${id}`)
-      .then(res => console.log(res.data));
+      .then(res => res.data)
   };
 
   return (
@@ -56,30 +60,35 @@ export default function ModuleDisplayData() {
           data.map(item => (
             <Grid item xs={3}>
               <Paper className={classes.paper}>
-                <Checkbox />
+
                 <List>
-
                   <ListItem>
                     <ListItemText>
-                      <Typography
-                        align="center"
-                      >
-                        Serial ID: {item.serial_id}
-                      </Typography>
+                      <Typography variant="h6">SERIAL ID</Typography>
+                      <Typography variant="subtitle1">{item.serial_id}</Typography>
                     </ListItemText>
                   </ListItem>
 
                   <ListItem>
                     <ListItemText>
-                      <Typography
-                        align="center"
-                      >
-                        Location: {item.location}
+                      <Typography variant="h6">LOCATION</Typography>
+                      <Typography variant="subtitle1">
+                        {item.location}
                       </Typography>
                     </ListItemText>
                   </ListItem>
-
                 </List>
+
+                <SwitchTab />
+
+                <Button
+                  color="primary"
+                  variant="contained"
+                  className={classes.send}
+                >
+                  SEND
+                </Button>
+
                 <Button
                   onClick={() => { deleteModule(item._id) }}
                   color="secondary"
@@ -88,6 +97,7 @@ export default function ModuleDisplayData() {
                 >
                   DELETE
                 </Button>
+
               </Paper>
             </Grid>
           ))
