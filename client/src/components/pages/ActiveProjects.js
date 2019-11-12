@@ -20,14 +20,6 @@ export default function ActiveProjects({ match }) {
   
   return (
     <Content>
-      <div>
-        <ul>
-          <li>
-            <Link to={`${match.url}Production`}>Production</Link>
-          </li>
-        </ul>
-      </div>
-
       <Typography
         align="center"
         variant="h2"
