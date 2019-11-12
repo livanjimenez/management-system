@@ -51,7 +51,8 @@ export default function ModuleForms() {
     };
 
     axios.post('/modules', data)
-      .then(res => console.log(res));
+      .then(res => console.log(res))
+      .catch(err => alert(err));
   };
 
   const handleChange = e => {

@@ -29,7 +29,9 @@ export default function SwitchTab() {
           value={move}
           onChange={handleChange}
         >
-          <MenuItem value={1}>Production</MenuItem>
+          <MenuItem value={1}>
+            Production
+            </MenuItem>
           <MenuItem value={2}>Testing</MenuItem>
           <MenuItem value={3}>Shipping</MenuItem>
         </Select>
