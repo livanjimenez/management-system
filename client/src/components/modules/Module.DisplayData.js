@@ -79,12 +79,7 @@ export default function ModuleDisplayData() {
                     </ListItemText>
                   </ListItem>
                 </List>
-                <ul>
-                  <li>
-                    <Link to="/production">production</Link>
-                  </li>
-                </ul>
-
+                
                 <SwitchTab />
 
                 <Button
