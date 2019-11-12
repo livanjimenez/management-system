@@ -31,6 +31,8 @@ import {
 import ActiveProjects from '../pages/ActiveProjects';
 import NewProjectForm from '../pages/NewProject.Forms';
 import Production from '../pages/Production';
+import Testing from '../pages/Testing';
+import Shipping from '../pages/Shipping';
 
 const useStyles = makeStyles(theme => ({
   link: {
@@ -88,7 +90,8 @@ const Navbar = () => {
             </ListItem>
           </Link>
 
-          <ListItem button disabled="true">
+          <Link to="/testing" className={classes.link}>
+          <ListItem button>
             <ListItemIcon>
               <Icon>
                 <PlaylistAddCheck />
@@ -99,8 +102,10 @@ const Navbar = () => {
               primaryTypographyProps={{ noWrap: true }}
             />
           </ListItem>
+          </Link>
 
-          <ListItem button disabled="true">
+          <Link to="/shipping" className={classes.link}>
+          <ListItem button>
             <ListItemIcon>
               <Icon>
                 <LocalShipping />
@@ -111,6 +116,7 @@ const Navbar = () => {
               primaryTypographyProps={{ noWrap: true }}
             />
           </ListItem>
+          </Link>
 
           <ListItem button disabled="true">
             <ListItemIcon>
@@ -156,6 +162,8 @@ const Navbar = () => {
         <Route exact path="/" component={ActiveProjects} />
         <Route exact path="/newproject" component={NewProjectForm} />
         <Route exact path="/production" component={Production} />
+        <Route exact path="/testing" component={Testing}/>
+        <Route exact path="/shipping" component={Shipping}/>
       </Switch>
     </Router>
   );

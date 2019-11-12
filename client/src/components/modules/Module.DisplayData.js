@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import SwitchTab from './SwitchTab';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -78,6 +79,11 @@ export default function ModuleDisplayData() {
                     </ListItemText>
                   </ListItem>
                 </List>
+                <ul>
+                  <li>
+                    <Link to="/production">production</Link>
+                  </li>
+                </ul>
 
                 <SwitchTab />
 
