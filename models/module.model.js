@@ -4,6 +4,9 @@ const ModuleSchema = mongoose.Schema({
   // not complete, needs to be updated with more data
   serial_id: { type: String, unique: true },
   location: String,
+  reason: String,
+  description: String,
+
 }, {
   timestamps: true
 });
