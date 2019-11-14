@@ -3,6 +3,7 @@ import { Content } from 'mui-layout';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Modules from '../modules/Module.DisplayData';
+import TestingForms from '../forms/Testing.Forms';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -26,6 +27,7 @@ export default function Testing({ match }) {
       >
         TESTING
         </Typography>
+        <TestingForms/>
     </Content>
   );
 }
