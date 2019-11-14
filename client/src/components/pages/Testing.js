@@ -26,7 +26,6 @@ export default function Testing({ match }) {
       >
         TESTING
         </Typography>
-      <Modules />
     </Content>
   );
 }

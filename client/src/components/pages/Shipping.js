@@ -26,7 +26,6 @@ export default function Shipping({ match }) {
       >
         SHIPPING AND RECEIVING
         </Typography>
-      <Modules />
     </Content>
   );
 }
