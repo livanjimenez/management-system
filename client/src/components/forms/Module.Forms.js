@@ -52,7 +52,7 @@ export default function ModuleForms() {
 
     axios.post('/modules', data)
       .then(res => console.log(res))
-      .catch(err => alert(err));
+      .catch(() => alert("Module already created!"));
   };
 
   const handleChange = e => {

@@ -46,6 +46,8 @@ export default function ModuleDisplayData() {
   const deleteModule = (id) => {
     axios.delete(`/modules/${id}`)
       .then(res => res.data)
+      .then(() => alert("Module deleted!"))
+      .catch(err => console.log(err));
   };
 
   return (
