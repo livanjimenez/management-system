@@ -5,6 +5,8 @@ const ModuleSchema = mongoose.Schema({
   serial_id: { type: String, unique: true },
   location: String,
   number: Number,
+  reason: String,
+  description: String,
 }, {
   timestamps: true
 });

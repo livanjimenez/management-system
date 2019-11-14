@@ -13,6 +13,8 @@ exports.create = (req, res) => {
   const module = new Module({
     serial_id: req.body.serial_id,
     location: req.body.location,
+    reason: req.body.reason,
+    description: req.body.description,
     
   });
 

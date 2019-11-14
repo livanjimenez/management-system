@@ -2,7 +2,7 @@ import React from 'react';
 import { Content } from 'mui-layout';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-
+import ProductionForm from '../forms/Production.Forms'
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -25,7 +25,7 @@ export default function Production() {
       >
         PRODUCTION
         </Typography>
-      
+      <ProductionForm />
     </Content>
   );
 }
