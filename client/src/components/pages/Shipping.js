@@ -3,7 +3,7 @@ import { Content } from 'mui-layout';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Modules from '../modules/Module.DisplayData';
-
+import ShippingandReceiving from '../forms/Shipping.and.Receiving';
 const useStyles = makeStyles(theme => ({
   title: {
     paddingTop: '1%',
@@ -26,6 +26,7 @@ export default function Shipping({ match }) {
       >
         SHIPPING AND RECEIVING
         </Typography>
+        <ShippingandReceiving/>
     </Content>
   );
 }
