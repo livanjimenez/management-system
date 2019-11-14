@@ -47,9 +47,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function CustomizedSelects() {
   const classes = useStyles();
-  const [age, setAge] = useState('');
+  const [location, setLocation] = useState('');
   const handleChange = event => {
-    setAge(event.target.value);
+    setLocation(event.target.value);
   };
   return (
     <div>
@@ -58,7 +58,7 @@ export default function CustomizedSelects() {
       <FormControl className={classes.margin}>
         <NativeSelect
           id="demo-customized-select-native"
-          value={age}
+          value={location}
           onChange={handleChange}
           input={<BootstrapInput />}
         >
