@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
             Receiving_from: module.Receiving_from,
         };
 
-        axios.post('/shipping.and.receiving', data)
+        axios.post('/modules', data)
       .then(res => console.log(res))
       .catch(err => alert(err));
     };

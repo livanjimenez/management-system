@@ -15,7 +15,11 @@ exports.create = (req, res) => {
     location: req.body.location,
     reason: req.body.reason,
     description: req.body.description,
-    
+    Shipping_from: req.body.Shipping_from,
+    Shipping_to: req.body.Shipping_to,
+    Tested_for: req.body.Tested_for,
+    Tested_by: req.body.Tested_by,
+    Receiving_from: req.body.Receiving_from,
   });
 
   // save module

@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 
+
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
@@ -83,7 +84,7 @@ export default function ModuleForms() {
             margin="normal"
             onChange={handleChange}
             name="reason"
-            value={module.location}
+            value={module.reason}
           />
           <TextField
             id="description"
@@ -94,7 +95,7 @@ export default function ModuleForms() {
             rowsMax="4"
             onChange={handleChange}
             name="description"
-            value={module.location}
+            value={module.description}
           />
           <Button 
           type="submit"
@@ -107,6 +108,9 @@ export default function ModuleForms() {
         </form>
       </Paper>
       <br />
+
+      
     </Container>
+    
   );
 }

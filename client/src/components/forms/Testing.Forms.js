@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
             Tested_by: module.Tested_by,
         };
 
-        axios.post('/Testing', data)
+        axios.post('/modules', data)
       .then(res => console.log(res))
       .catch(err => alert(err));
     };

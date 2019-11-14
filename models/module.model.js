@@ -6,7 +6,11 @@ const ModuleSchema = mongoose.Schema({
   location: String,
   reason: String,
   description: String,
-
+  Shipping_from: String,
+  Shipping_to: String,
+  Receiving_from: String,
+  Tested_for: String,
+  Tested_by: String,
 }, {
   timestamps: true
 });

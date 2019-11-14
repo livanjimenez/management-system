@@ -134,18 +134,6 @@ const Navbar = () => {
 
           <ListItem button disabled="true">
             <ListItemIcon>
-              <Icon>
-                <Send />
-              </Icon>
-            </ListItemIcon>
-            <ListItemText
-              primary={"Send To"}
-              primaryTypographyProps={{ noWrap: true }}
-            />
-          </ListItem>
-
-          <ListItem button disabled="true">
-            <ListItemIcon>
               <Icon >
                 <Settings />
               </Icon>
