@@ -9,7 +9,6 @@ import {
   Assessment,
   FolderOpen,
   Settings,
-  Send,
   AddCircle,
 } from "@material-ui/icons";
 import {
