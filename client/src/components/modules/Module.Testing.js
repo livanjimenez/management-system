@@ -41,11 +41,16 @@ export default function ModuleDisplayData() {
     })();
   }, []);
 
+  function reloadPage() {
+    window.location.reload();
+  }
+
   // DELETE FROM DB
   const deleteModule = (id) => {
     axios.delete(`/modules/${id}`)
       .then(res => res.data)
       .then(() => alert("Module deleted!"))
+      .then(() => reloadPage())
       .catch(err => console.log(err));
   };
 
