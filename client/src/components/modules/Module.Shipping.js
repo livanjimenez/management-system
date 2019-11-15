@@ -8,6 +8,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -19,7 +21,6 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     margin: theme.spacing(1),
-    float: 'right',
   },
   send: {
     margin: theme.spacing(1),
@@ -68,7 +69,7 @@ export default function ModuleDisplayData() {
                       <Typography variant="subtitle1">{item.serial_id}</Typography>
                     </ListItemText>
                   </ListItem>
-
+                  <Divider style={{ margin: "12px 0" }} />
                   <ListItem>
                     <ListItemText>
                       <Typography variant="h6">SHIPPED FROM</Typography>
@@ -77,7 +78,7 @@ export default function ModuleDisplayData() {
                       </Typography>
                     </ListItemText>
                   </ListItem>
-
+                  <Divider style={{ margin: "12px 0" }} />
                   <ListItem>
                     <ListItemText>
                       <Typography variant="h6">SHIPPING TO</Typography>
@@ -86,7 +87,7 @@ export default function ModuleDisplayData() {
                       </Typography>
                     </ListItemText>
                   </ListItem>
-
+                  <Divider style={{ margin: "12px 0" }} />
                   <ListItem>
                     <ListItemText>
                       <Typography variant="h6">RECEIVING FROM</Typography>
@@ -96,6 +97,15 @@ export default function ModuleDisplayData() {
                     </ListItemText>
                   </ListItem>
                 </List>
+
+                <Button
+                  onClick={() => { deleteModule(item._id) }}
+                  color="secondary"
+                  variant="contained"
+                  className={classes.button}
+                >
+                  DELETE
+                </Button>
 
               </Paper>
             </Grid>

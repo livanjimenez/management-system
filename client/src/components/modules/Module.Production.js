@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -20,7 +21,6 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     margin: theme.spacing(1),
-    float: 'right',
   },
   send: {
     margin: theme.spacing(1),
@@ -69,7 +69,7 @@ export default function ModuleDisplayData() {
                       <Typography variant="subtitle1">{item.serial_id}</Typography>
                     </ListItemText>
                   </ListItem>
-
+                  <Divider style={{ margin: "12px 0" }} />
                   <ListItem>
                     <ListItemText>
                       <Typography variant="h6">REASON</Typography>
@@ -78,7 +78,7 @@ export default function ModuleDisplayData() {
                       </Typography>
                     </ListItemText>
                   </ListItem>
-
+                  <Divider style={{ margin: "12px 0" }} />
                   <ListItem>
                     <ListItemText>
                       <Typography variant="h6">DESCRIPTION</Typography>
@@ -88,6 +88,16 @@ export default function ModuleDisplayData() {
                     </ListItemText>
                   </ListItem>
                 </List>
+
+                <Button
+                  onClick={() => { deleteModule(item._id) }}
+                  color="secondary"
+                  variant="contained"
+                  className={classes.button}
+                >
+                  DELETE
+                </Button>
+
 
               </Paper>
             </Grid>
