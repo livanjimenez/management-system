@@ -45,7 +45,7 @@ export default function ModuleForms() {
 
   const submit = e => {
 
-    e.preventDefault();
+    // e.preventDefault();
 
     const data = {
       serial_id: module.serial_id,

@@ -42,7 +42,6 @@ export default function ModuleForms() {
   });
 
   const submit = e => {
-
     e.preventDefault();
 
     const data = {
@@ -51,8 +50,13 @@ export default function ModuleForms() {
     };
 
     axios.post('/modules', data)
-      .then(res => console.log(res))
-      .catch(() => alert("Module already created!"));
+      .then(res => {
+        console.log(res);
+        
+      })
+      .catch(() => {
+        alert("Module already created!");
+      });
   };
 
   const handleChange = e => {

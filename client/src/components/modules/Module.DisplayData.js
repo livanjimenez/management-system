@@ -13,7 +13,7 @@ import SwitchTab from './SwitchTab';
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
   },
   root: {
     fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
