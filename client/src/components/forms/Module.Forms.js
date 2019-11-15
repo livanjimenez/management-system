@@ -41,6 +41,10 @@ export default function ModuleForms() {
     location: '',
   });
 
+  function reloadPage() {
+    window.location.reload();
+  }
+
   const submit = e => {
     e.preventDefault();
 
@@ -52,8 +56,9 @@ export default function ModuleForms() {
     axios.post('/modules', data)
       .then(res => {
         console.log(res);
-        
+
       })
+      .then(() => reloadPage())
       .catch(() => {
         alert("Module already created!");
       });
@@ -87,11 +92,11 @@ export default function ModuleForms() {
             name="location"
             value={module.location}
           />
-          <Button 
-          type="submit"
-          color="primary"
-          variant="contained"
-          className={classes.button}
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            className={classes.button}
           >
             POST
           </Button>

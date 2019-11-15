@@ -43,9 +43,13 @@ export default function ModuleForms() {
     description: '',
   });
 
+  function reloadPage() {
+    window.location.reload();
+  }
+
   const submit = e => {
 
-    // e.preventDefault();
+    e.preventDefault();
 
     const data = {
       serial_id: module.serial_id,
@@ -55,6 +59,7 @@ export default function ModuleForms() {
 
     axios.post('/modules', data)
       .then(res => console.log(res))
+      .then(() => reloadPage())
       .catch(err => alert(err));
   };
 
@@ -97,11 +102,11 @@ export default function ModuleForms() {
             name="description"
             value={module.description}
           />
-          <Button 
-          type="submit"
-          color="primary"
-          variant="contained"
-          className={classes.button}
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            className={classes.button}
           >
             POST
           </Button>
@@ -109,8 +114,8 @@ export default function ModuleForms() {
       </Paper>
       <br />
 
-      
+
     </Container>
-    
+
   );
 }
