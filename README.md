@@ -1,1 +1,1 @@
-# amepower-project
+# senior design project
